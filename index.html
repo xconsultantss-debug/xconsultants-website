@@ -593,7 +593,7 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
       <span class="eyebrow" style="position:relative">The Director's Circular</span>
       <h2 class="title" style="margin-top:18px">Analytical precision,<br><em>distributed monthly.</em></h2>
       <p class="lead">UK fiscal change and corporate architecture, decoded for elite partners. No noise — one brief, once a month.</p>
-      <form style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Requested';">
+      <form id="circForm" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative">
         <input type="email" required placeholder="director@company.co.uk" style="background:rgba(255,255,255,.07);border:1px solid var(--line-2);border-radius:980px;padding:13px 22px;font-size:14px;color:var(--txt);outline:none;min-width:min(300px,80vw)">
         <button class="btn btn-primary" type="submit">Request Circular</button>
       </form>
@@ -825,14 +825,26 @@ showTesti(0);resetT();
   document.addEventListener('visibilitychange',()=>{document.hidden?cancelAnimationFrame(raf):frame();});
 })();
 
-/* ================= CONTACT FORM ================= */
+/* ================= FORMS → SUPABASE ================= */
+const SUPA_URL='https://cxgmjncyvhldvbylzfxl.supabase.co';
+const SUPA_KEY='sb_publishable_n73WgbrjmjUWP6Cp_BsgOw_SKee7PlR';
+function supaInsert(table,row){
+  return fetch(SUPA_URL+'/rest/v1/'+table,{method:'POST',headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(row)});
+}
 document.getElementById('contactForm').addEventListener('submit',function(e){
-  if(location.hostname==='localhost'||location.protocol==='file:'||!document.querySelector('[data-netlify]')){e.preventDefault();}
-  else{e.preventDefault();
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(this)).toString()}).catch(()=>{});
-  }
+  e.preventDefault();
+  const f=new FormData(this);
+  supaInsert('contact_messages',{name:f.get('name'),email:f.get('email'),phone:f.get('phone')||null,client_type:f.get('type'),message:f.get('message')}).catch(()=>{});
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(f).toString()}).catch(()=>{});
   document.getElementById('formOk').style.display='block';
   this.querySelectorAll('input:not([type=hidden]),textarea').forEach(i=>i.value='');
+});
+document.getElementById('circForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const em=this.querySelector('input[type=email]').value;
+  supaInsert('circular_subscribers',{email:em}).catch(()=>{});
+  this.querySelector('button').textContent='✓ Requested';
+  this.querySelector('input').value='';
 });
 
 /* ================================================================
