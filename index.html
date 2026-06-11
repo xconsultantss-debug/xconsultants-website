@@ -24,7 +24,7 @@
 <link rel="canonical" href="https://xconsultants.co.uk/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":["AccountingService","ProfessionalService"],"@id":"https://xconsultants.co.uk/#org","name":"X Consultants","alternateName":"X Consultants UK","url":"https://xconsultants.co.uk/","logo":"https://xconsultants.co.uk/og-image.png","image":"https://xconsultants.co.uk/og-image.png","email":"support@xconsultants.co.uk","slogan":"Clarity in Numbers. Confidence in Growth.","description":"ACCA qualified tax and business consultants in Reading, UK. Accountancy, VAT, corporation tax, self assessment, payroll and business advisory for directors, sole traders and SMEs.","address":{"@type":"PostalAddress","addressLocality":"Reading","addressRegion":"Berkshire","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"United Kingdom"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},"priceRange":"££","knowsAbout":["UK tax","VAT","Corporation tax","Self assessment","Bookkeeping","Payroll","Company formation","Capital gains tax","Stamp duty"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Accountancy Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"VAT Services","description":"VAT registration, scheme selection and MTD-compliant quarterly filings."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bookkeeping","description":"Cloud-native ledger management on Xero, QuickBooks or FreeAgent."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Year End Accounts","description":"Statutory accounts preparation and filing under FRS 102/105."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Self Assessment","description":"Personal tax returns and strategic planning."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Corporation Tax","description":"CT600 preparation and marginal relief optimisation."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Payroll & CIS","description":"RTI-compliant payroll, pensions and CIS returns."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Company Formation","description":"Incorporation and tax-efficient structuring."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Taxi Driver Accounting","description":"Specialist support for Uber, Bolt and private hire drivers."}}]}},
+{"@type":["AccountingService","ProfessionalService"],"@id":"https://xconsultants.co.uk/#org","name":"X Consultants","alternateName":"X Consultants UK","url":"https://xconsultants.co.uk/","logo":"https://xconsultants.co.uk/og-image.png","image":"https://xconsultants.co.uk/og-image.png","email":"support@xconsultants.co.uk","slogan":"Clarity in Numbers. Confidence in Growth.","description":"ACCA qualified tax and business consultants in Reading, UK. Accountancy, VAT, corporation tax, self assessment, payroll and business advisory for directors, sole traders and SMEs.","address":{"@type":"PostalAddress","addressLocality":"Reading","addressRegion":"Berkshire","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"United Kingdom"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},"priceRange":"££","foundingDate":"2026-01","foundingLocation":{"@type":"Place","name":"Reading, Berkshire, UK"},"knowsAbout":["UK tax","VAT","Corporation tax","Self assessment","Bookkeeping","Payroll","Company formation","Capital gains tax","Stamp duty"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Accountancy Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"VAT Services","description":"VAT registration, scheme selection and MTD-compliant quarterly filings."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Bookkeeping","description":"Cloud-native ledger management on Xero, QuickBooks or FreeAgent."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Year End Accounts","description":"Statutory accounts preparation and filing under FRS 102/105."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Self Assessment","description":"Personal tax returns and strategic planning."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Corporation Tax","description":"CT600 preparation and marginal relief optimisation."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Payroll & CIS","description":"RTI-compliant payroll, pensions and CIS returns."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Company Formation","description":"Incorporation and tax-efficient structuring."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Taxi Driver Accounting","description":"Specialist support for Uber, Bolt and private hire drivers."}}]}},
 {"@type":"WebSite","@id":"https://xconsultants.co.uk/#website","url":"https://xconsultants.co.uk/","name":"X Consultants","publisher":{"@id":"https://xconsultants.co.uk/#org"},"inLanguage":"en-GB"},
 {"@type":"FAQPage","@id":"https://xconsultants.co.uk/#faq","mainEntity":[
 {"@type":"Question","name":"How much is corporation tax in the UK for 2026/27?","acceptedAnswer":{"@type":"Answer","text":"The small profits rate is 19% on profits up to £50,000 and the main rate is 25% from £250,000. Profits between £50,000 and £250,000 receive marginal relief, creating an effective rate of 26.5% on that band."}},
@@ -326,6 +326,13 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
 .article .hint{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--blue);display:inline-block;margin-top:10px}
 .empty-note{color:var(--muted-2);font-size:13px;padding:14px;border:1px dashed var(--line);border-radius:12px;text-align:center}
 
+/* ============ TESTIMONIAL CARDS ============ */
+.t-card q{font-size:14.5px;line-height:1.75;color:var(--muted);display:block;margin:6px 0 20px;quotes:"\201C" "\201D"}
+.t-card .t-stars{color:#E2B33C;letter-spacing:3px;font-size:14px;margin-bottom:10px}
+.t-who{display:flex;align-items:center;gap:12px}
+.t-who b{font-size:14px;display:block}
+.t-who span+div span,.t-who div span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);font-weight:600;display:block;margin-top:3px}
+
 /* ============ FAQ ============ */
 .faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--glass);overflow:hidden;transition:border-color .3s}
 .faq-item.open{border-color:rgba(65,173,236,.4)}
@@ -450,10 +457,10 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
 
   <section><div class="wrap">
     <div class="stats rv" data-stagger>
-      <div class="stat"><b data-count="500" data-suffix="+">0</b><span>Clients Advised</span></div>
-      <div class="stat"><b data-count="12" data-suffix="+">0</b><span>Years of Expertise</span></div>
-      <div class="stat"><b>£<i style="font-size:1em;font-style:normal" data-count="4.2" data-decimal="1">0</i>m<i>+</i></b><span>Tax Saved for Clients</span></div>
-      <div class="stat"><b data-count="98" data-suffix="%">0</b><span>Client Retention</span></div>
+      <div class="stat"><b data-count="60" data-suffix="+">0</b><span>Clients Onboarded Since Jan 2026</span></div>
+      <div class="stat"><b data-count="25" data-suffix="+">0</b><span>Years Combined Team Experience</span></div>
+      <div class="stat"><b>£<i style="font-size:1em;font-style:normal" data-count="380">0</i>k<i>+</i></b><span>Tax Saved for Clients in 2026</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Filing Deadlines Met</span></div>
     </div>
   </div></section>
 
@@ -567,13 +574,27 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
   </div></section>
 
   <section><div class="wrap">
-    <div class="sec-head center rv"><span class="eyebrow">Client Success</span><h2 class="title">Trusted by <em>Industry Leaders.</em></h2></div>
-    <div class="testi-stage rv" id="testiStage">
-      <div class="testi on"><q>X Consultants transformed our tax strategy. Their proactive approach saved us <em>significant liabilities</em> during our expansion.</q><span class="avatar">JW</span><div class="who"><b>James Wilson</b><span>CEO, Techflow UK</span></div></div>
-      <div class="testi"><q>The most precise accountancy firm we've partnered with. Their <em>cloud-native approach</em> makes financial visibility effortless.</q><span class="avatar" style="background:linear-gradient(135deg,#5BC8D9,#0B72E7)">SC</span><div class="who"><b>Sarah Chen</b><span>Director, Artisan Media</span></div></div>
-      <div class="testi"><q>Exceptional structural advice for our group reorganisation. They are more than accountants; they are <em>strategic partners.</em></q><span class="avatar" style="background:linear-gradient(135deg,#8B5CF6,#0B72E7)">DK</span><div class="who"><b>David Knight</b><span>Founder, Knight &amp; Co</span></div></div>
+    <div class="sec-head center rv"><span class="eyebrow">Client Success</span><h2 class="title">Early clients, <em>honest words.</em></h2><p class="lead">We opened our doors in January 2026. Here is what the first wave of clients say about working with us.</p></div>
+    <div class="grid g3 rv" data-stagger>
+      <div class="card t-card"><div class="t-stars">★★★★★</div><q>They incorporated our company, registered VAT and set up payroll inside a week. As first-time founders we needed someone to just handle it — they did.</q><div class="t-who"><span class="avatar" style="width:44px;height:44px;font-size:14px">SM</span><div><b>Sarah M.</b><span>E-commerce founder · Maidenhead · Feb 2026</span></div></div></div>
+      <div class="card t-card"><div class="t-stars">★★★★★</div><q>I drove for Uber for four years doing my own returns. Their taxi package found mileage and licensing deductions I'd been missing — my January payment was over £800 lower.</q><div class="t-who"><span class="avatar" style="width:44px;height:44px;font-size:14px;background:linear-gradient(135deg,#5BC8D9,#0B72E7)">IK</span><div><b>Imran K.</b><span>Private hire driver · Reading · Mar 2026</span></div></div></div>
+      <div class="card t-card"><div class="t-stars">★★★★★</div><q>When the dividend rates jumped in April they called me before I'd even read the news, re-modelled my salary and dividend mix, and showed the workings. That's the proactivity I was promised.</q><div class="t-who"><span class="avatar" style="width:44px;height:44px;font-size:14px;background:linear-gradient(135deg,#8B5CF6,#0B72E7)">DR</span><div><b>Daniel R.</b><span>IT contractor · Wokingham · Apr 2026</span></div></div></div>
+      <div class="card t-card"><div class="t-stars">★★★★★</div><q>Two rental properties and zero idea about Making Tax Digital. They moved me onto digital records and filed my first quarterly update with weeks to spare.</q><div class="t-who"><span class="avatar" style="width:44px;height:44px;font-size:14px;background:linear-gradient(135deg,#E2A33C,#0B72E7)">PS</span><div><b>Priya S.</b><span>Landlord · Reading · May 2026</span></div></div></div>
+      <div class="card t-card"><div class="t-stars">★★★★★</div><q>Moved our café from a shoebox of receipts to Xero in a fortnight. The monthly numbers now arrive before I've asked for them. Fixed fee, no surprises so far.</q><div class="t-who"><span class="avatar" style="width:44px;height:44px;font-size:14px;background:linear-gradient(135deg,#34C759,#0B72E7)">TW</span><div><b>Tom W.</b><span>Café owner · Caversham · May 2026</span></div></div></div>
+      <div class="card t-card"><div class="t-stars">★★★★★</div><q>My first ever self assessment as a freelancer. They explained every line, claimed home-office costs I didn't know existed, and replied to emails the same day. New firm, but it doesn't feel like one.</q><div class="t-who"><span class="avatar" style="width:44px;height:44px;font-size:14px;background:linear-gradient(135deg,#E25C5C,#0B72E7)">AB</span><div><b>Aleksandra B.</b><span>Marketing consultant · Bracknell · Jun 2026</span></div></div></div>
     </div>
-    <div class="testi-dots" id="testiDots"></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="sec-head center rv"><span class="eyebrow">Who We Serve</span><h2 class="title">Accountants for the way <em>you work.</em></h2><p class="lead">Based in Reading, Berkshire — serving clients across the Thames Valley, London and the whole of the UK, fully online.</p></div>
+    <div class="grid g3 rv" data-stagger>
+      <div class="card"><span class="kicker">Limited Companies</span><h3>Company directors</h3><p>Corporation tax returns, payroll, dividend planning and tax-efficient profit extraction for owner-managed limited companies and startups.</p></div>
+      <div class="card"><span class="kicker">Self-Employed</span><h3>Sole traders &amp; freelancers</h3><p>Self assessment tax returns, Making Tax Digital quarterly filing, expense reviews and National Insurance planning for the self-employed.</p></div>
+      <div class="card"><span class="kicker">Private Hire</span><h3>Taxi &amp; Uber drivers</h3><p>Specialist accounting for taxi, Uber, Bolt and private hire drivers — mileage claims, vehicle costs and licensing deductions that maximise take-home pay.</p></div>
+      <div class="card"><span class="kicker">Property</span><h3>Landlords &amp; investors</h3><p>Rental income tax returns, capital gains tax on property sales, stamp duty advice and MTD for landlords earning over £50,000.</p></div>
+      <div class="card"><span class="kicker">Contracting</span><h3>Contractors &amp; consultants</h3><p>IR35 reviews, salary and dividend modelling, VAT flat rate scheme advice and pension planning for IT and professional contractors.</p></div>
+      <div class="card"><span class="kicker">Online Business</span><h3>E-commerce &amp; digital</h3><p>VAT for online sellers, marketplace reconciliation, cloud bookkeeping and international VAT questions for Amazon, Shopify and Etsy businesses.</p></div>
+    </div>
   </div></section>
 
   <section style="padding-top:0"><div class="wrap">
@@ -643,6 +664,22 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
       <div class="calc-panel rv-l" id="calcForm"></div>
       <div class="rv-r" id="calcOut"></div>
     </div>
+
+    <section style="padding-bottom:0">
+      <div class="sec-head center rv"><span class="eyebrow">Reference</span><h2 class="title">2026/27 UK tax rates <em>at a glance.</em></h2><p class="lead">The key rates, thresholds and allowances for the 2026/27 tax year (6 April 2026 – 5 April 2027), as used by our calculators.</p></div>
+      <div class="grid g3 rv" data-stagger>
+        <div class="card"><span class="kicker">Income Tax</span><h3>Personal allowance £12,570</h3><p>Basic rate 20% on the first £37,700 of taxable income; higher rate 40% to £125,140; additional rate 45% above. The allowance tapers away above £100,000 of income.</p></div>
+        <div class="card"><span class="kicker">National Insurance</span><h3>Employee NI 8% / 2%</h3><p>Class 1 employee NI is 8% between £12,570 and £50,270, then 2% above. Self-employed Class 4 NI is 6% between the same thresholds, then 2%.</p></div>
+        <div class="card"><span class="kicker">Dividends</span><h3>Dividend allowance £500</h3><p>Dividend tax rates rose on 6 April 2026: 10.75% basic rate, 35.75% higher rate and 39.35% additional rate.</p></div>
+        <div class="card"><span class="kicker">Corporation Tax</span><h3>19% / 25% + marginal relief</h3><p>Small profits rate 19% up to £50,000; main rate 25% from £250,000. Between them, marginal relief gives an effective 26.5% on the middle band.</p></div>
+        <div class="card"><span class="kicker">VAT</span><h3>Standard rate 20%</h3><p>Registration threshold £90,000 taxable turnover in any rolling 12 months. Reduced rate 5%, zero rate 0%. Making Tax Digital filing is mandatory.</p></div>
+        <div class="card"><span class="kicker">Capital Gains Tax</span><h3>18% / 24% · £3,000 exempt</h3><p>Annual exempt amount £3,000. Gains taxed at 18% within the basic rate band, 24% above — for both property and shares. BADR rate is 18% from April 2026.</p></div>
+        <div class="card"><span class="kicker">Stamp Duty</span><h3>Nil-rate band £125,000</h3><p>SDLT bands: 0% to £125k, 2% to £250k, 5% to £925k, 10% to £1.5m, 12% above. First-time buyers pay nothing up to £300,000. Additional properties add 5%.</p></div>
+        <div class="card"><span class="kicker">Student Loans</span><h3>Plan thresholds 2026/27</h3><p>Plan 1 £26,900 · Plan 2 £29,385 · Plan 4 £33,795 · Plan 5 £25,000 — all at 9% of income above the threshold. Postgraduate loans: 6% above £21,000.</p></div>
+        <div class="card"><span class="kicker">Making Tax Digital</span><h3>MTD ITSA from £50,000</h3><p>Since April 2026, sole traders and landlords with qualifying income over £50,000 must keep digital records and file quarterly. The £30,000 tier follows in 2027.</p></div>
+      </div>
+      <p class="disclaimer rv" style="text-align:center;max-width:720px;margin:26px auto 0">Rates shown for England, Wales &amp; Northern Ireland unless stated; Scotland sets its own income tax bands (19%–48% in 2026/27). Figures are for guidance only — <a href="/contact" style="color:var(--blue)">speak to us</a> for advice on your circumstances.</p>
+    </section>
   </div>
 </section>
 
@@ -659,6 +696,9 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
       <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-clipboard"/></svg></span><span class="date">May 2026</span><div><h3>MTD for Income Tax: the April 2026 go-live, one month in</h3><p>Quarterly digital reporting is now live for sole traders and landlords over £50k. What the first filing cycle taught our clients.</p><div class="more"><p>Sole traders and landlords with qualifying income over £50,000 must now keep digital records and file quarterly updates. The first cumulative submissions are due 7 August 2026 — and HMRC's penalty points regime applies.</p><p>Our cloud bookkeeping clients were compliant from day one. If you are still on spreadsheets, the catch-up window before your first deadline is short — <a href="/contact" style="color:var(--blue)" onclick="event.stopPropagation()">talk to us</a> about a fast migration.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Compliance</span></div>
       <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-trend"/></svg></span><span class="date">Apr 2026</span><div><h3>BADR at 18%: exit timing after the April rise</h3><p>Business Asset Disposal Relief has stepped up again. We quantify the impact on sale proceeds and the case for planning ahead.</p><div class="more"><p>Business Asset Disposal Relief climbed from 14% to 18% on 6 April 2026 — the second step of the announced rises. On a £1m qualifying gain, that is £40,000 more tax than a disposal completed in 2025/26.</p><p>The £1m lifetime limit remains. If a sale is on your horizon, structuring and timing reviews matter more than ever — estimate the liability with our <a href="/tools?tab=cgt" style="color:var(--blue)" onclick="event.stopPropagation()">Capital Gains calculator</a>.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Exit Planning</span></div>
       <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pin"/></svg></span><span class="date">Mar 2026</span><div><h3>Scotland's new 48% top rate — cross-border planning notes</h3><p>The 2026/27 Scottish Budget added pressure at the top. Residence, relocation and pension levers examined.</p><div class="more"><p>The 2026/27 Scottish Budget pushed the top rate to 48% above £125,140, with six bands now in play. A £160,000 earner in Scotland pays materially more than in the rest of the UK.</p><p>Residence is determined by where you live, not where you work — but pensions, dividend income (UK-wide rates) and incorporation all change the calculus. Compare both regimes in our <a href="/tools?tab=salary" style="color:var(--blue)" onclick="event.stopPropagation()">Salary calculator</a> with the Scottish toggle.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Personal Tax</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-coins"/></svg></span><span class="date">Jun 2026</span><div><h3>Take-home pay on a £50,000 salary in 2026/27</h3><p>What £50k actually puts in your pocket after income tax, National Insurance and pension — and the levers that change it.</p><div class="more"><p>On a £50,000 salary with no pension contributions, you pay roughly £7,486 income tax and £2,994 employee National Insurance in 2026/27, leaving take-home pay of about £39,520 — £3,293 a month.</p><p>Salary-sacrifice pension contributions, the marriage allowance and student loan plans all shift the number. Check your exact figure in seconds with our <a href="/tools?tab=salary" style="color:var(--blue)" onclick="event.stopPropagation()">salary take-home calculator</a>.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Personal Tax</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-rocket"/></svg></span><span class="date">May 2026</span><div><h3>Limited company vs sole trader in 2026: which saves more tax?</h3><p>The April dividend rises moved the crossover point. We run the numbers at £30k, £50k and £80k of profit.</p><div class="more"><p>At lower profits, sole trader simplicity often wins: Class 4 NI at 6% is now relatively gentle. As profits grow, a limited company still wins through the 19% small profits rate and timing flexibility — but the new 10.75%/35.75% dividend rates have narrowed the gap.</p><p>Liability protection, credibility and pension funding matter too. We model both routes for you as part of <a href="/services" style="color:var(--blue)" onclick="event.stopPropagation()">company formation advice</a>.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Structuring</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-home"/></svg></span><span class="date">Apr 2026</span><div><h3>First-time buyer stamp duty in 2026: the £300,000 nil-rate band</h3><p>What first-time buyers pay in SDLT, when relief disappears, and how joint purchases are treated.</p><div class="more"><p>First-time buyers pay no stamp duty up to £300,000 and 5% on the portion to £500,000. Above £500,000 the relief vanishes entirely and standard bands apply — a sharp cliff edge worth planning around.</p><p>Buying jointly? Every purchaser must be a first-time buyer to qualify. Estimate your bill with our <a href="/tools?tab=sdlt" style="color:var(--blue)" onclick="event.stopPropagation()">stamp duty calculator</a>.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Property</span></div>
       <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-building"/></svg></span><span class="date">Feb 2026</span><div><h3>Marginal relief: the 26.5% trap between £50k and £250k</h3><p>Most directors don't realise profits in the marginal band suffer an effective 26.5%. Three legitimate mitigation routes.</p><div class="more"><p>Corporation tax looks like 19% or 25%, but every pound of profit between £50,000 and £250,000 effectively suffers 26.5% — higher than the main rate itself.</p><p>Pension contributions, capital allowances and timing of income can pull profits out of the marginal band. See your effective rate in our <a href="/tools?tab=corp" style="color:var(--blue)" onclick="event.stopPropagation()">Corporation Tax calculator</a>, then ask us about mitigation.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Corporation Tax</span></div>
     </div>
 
@@ -691,10 +731,10 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
     <section style="padding-bottom:0">
       <div class="sec-head center rv"><span class="eyebrow">Our Journey</span><h2 class="title">Built on <em>trust.</em></h2></div>
       <div class="timeline rv">
-        <div class="tl-item"><span class="yr">Foundation</span><h4>A practice with a different posture</h4><p>X Consultants was founded in Reading with a simple conviction: SMEs deserve the strategic tax thinking usually reserved for large corporates.</p></div>
-        <div class="tl-item"><span class="yr">Growth</span><h4>Cloud-native from the start</h4><p>We standardised on cloud bookkeeping early, giving clients real-time visibility years before Making Tax Digital made it mandatory.</p></div>
-        <div class="tl-item"><span class="yr">Specialism</span><h4>Sector depth, not breadth alone</h4><p>Dedicated desks for private-hire drivers, contractors and digital businesses — sectors where generic advice quietly costs thousands.</p></div>
-        <div class="tl-item"><span class="yr">Today</span><h4>500+ clients, one standard</h4><p>From sole traders to multi-entity groups, every client gets ACCA-qualified eyes on their numbers and a senior partner on call.</p></div>
+        <div class="tl-item"><span class="yr">January 2026</span><h4>Founded in Reading</h4><p>X Consultants opened with a simple conviction: SMEs deserve the strategic tax thinking usually reserved for large corporates. Our founders bring 25+ years of combined experience from established UK practices.</p></div>
+        <div class="tl-item"><span class="yr">February 2026</span><h4>Cloud-native from day one</h4><p>No legacy systems, no paper. Every client onboarded straight onto Xero, QuickBooks or FreeAgent — ready for Making Tax Digital before the April go-live.</p></div>
+        <div class="tl-item"><span class="yr">April 2026</span><h4>The 2026/27 rate-change clinics</h4><p>Dividend rates rose, BADR stepped up, Scotland added a 48% top rate. We re-modelled every client's position within the month — and published our free calculators so anyone can check theirs.</p></div>
+        <div class="tl-item"><span class="yr">Today</span><h4>60+ clients and counting</h4><p>Directors, sole traders, landlords and private-hire drivers across Reading, Berkshire and the Thames Valley. Every one gets ACCA-qualified eyes on their numbers and a senior partner on call.</p></div>
       </div>
     </section>
 
@@ -852,7 +892,7 @@ const META={
   services:['Accountancy Services in Reading | VAT, Bookkeeping, Year End Accounts & Payroll','VAT registration and MTD filings, cloud bookkeeping, year end accounts, self assessment, corporation tax, payroll, CIS and company formation - fixed monthly fees from ACCA qualified accountants in Reading.'],
   tools:['Free UK Tax Calculators 2026/27 | Salary, VAT, Corporation Tax, Dividend & More','Eight free UK tax calculators updated for 2026/27: salary take-home pay, VAT, corporation tax with marginal relief, dividend tax, self assessment, taxi driver tax, capital gains and stamp duty.'],
   knowledge:['UK Tax Insights & Briefs | X Consultants Knowledge Hub','Expert analysis of UK fiscal change: 2026/27 dividend tax rises, Making Tax Digital, BADR, Scottish income tax and corporation tax marginal relief - from ACCA qualified consultants.'],
-  about:['About X Consultants | ACCA Qualified Accountants in Reading, Berkshire','Meet X Consultants: a Reading-based ACCA qualified practice serving 500+ UK directors, sole traders and SMEs with precision accountancy and proactive tax strategy.'],
+  about:['About X Consultants | ACCA Qualified Accountants in Reading, Berkshire','Meet X Consultants: a new ACCA qualified practice founded in Reading in 2026, bringing 25+ years of combined experience to UK directors, sole traders, landlords and SMEs.'],
   contact:['Contact X Consultants | Book a Free Tax Consultation in Reading','Book a private consultation with our senior partners. Email support@xconsultants.co.uk - a reply within one working day. Reading, Berkshire, UK.'],
   login:['Client Portal Login | X Consultants','Secure client portal for X Consultants clients: documents, enquiries and engagement details.'],
   portal:['Your Dashboard | X Consultants Client Portal','Secure client dashboard.']
@@ -961,23 +1001,6 @@ document.addEventListener('mousemove',e=>{
   });
 },{passive:true});
 document.addEventListener('mouseleave',()=>document.querySelectorAll('.tilt').forEach(c=>c.style.transform=''),true);
-
-/* ================= TESTIMONIALS ================= */
-const testis=document.querySelectorAll('#testiStage .testi');
-const dotsBox=document.getElementById('testiDots');
-let tIdx=0,tTimer;
-testis.forEach((_,i)=>{
-  const b=document.createElement('button');
-  b.addEventListener('click',()=>{showTesti(i);resetT();});
-  dotsBox.appendChild(b);
-});
-function showTesti(i){
-  tIdx=i;
-  testis.forEach((t,j)=>t.classList.toggle('on',j===i));
-  dotsBox.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',j===i));
-}
-function resetT(){clearInterval(tTimer);tTimer=setInterval(()=>showTesti((tIdx+1)%testis.length),6000);}
-showTesti(0);resetT();
 
 /* ================= HERO PARTICLE FIELD ================= */
 (function(){
