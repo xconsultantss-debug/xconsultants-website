@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>X Consultants | ACCA Qualified Tax & Business Experts</title>
+<meta name="description" content="ACCA Qualified Tax & Business Consultants based in Reading, UK. Expert accountancy, VAT, corporation tax, self assessment and business advisory — with precision tax calculators for the 2026/27 year.">
+<meta property="og:title" content="X Consultants — Clarity in Numbers. Confidence in Growth.">
+<meta property="og:description" content="UK Tax & Business Strategy Experts. Proactive accountancy and tax planning for directors, sole traders and SMEs.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B72E7'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3EX%3C/text%3E%3C/svg%3E">
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --ink:#0A1322; --ink-2:#0D1830; --ink-3:#111F3C;
+  --glass:rgba(255,255,255,.045); --glass-2:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.18);
+  --txt:#F4F7FB; --muted:#93A3BC; --muted-2:#6B7C97;
+  --blue:#41ADEC; --blue-2:#0B72E7; --blue-soft:rgba(65,173,236,.14);
+  --grad:linear-gradient(135deg,#41ADEC 0%,#0B72E7 60%,#0A5BCB 100%);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --rad:22px; --rad-sm:14px; --pill:980px;
+  --ease:cubic-bezier(.22,.61,.21,1);
+  --nav-h:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans); background:var(--ink); color:var(--txt);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden; min-height:100vh;
+}
+::selection{background:var(--blue-2);color:#fff}
+img,svg,canvas{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select{font-family:inherit;color:inherit}
+
+/* ============ BACKDROP TEXTURE ============ */
+.bg-dots{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1200px 800px at 80% -10%,rgba(11,114,231,.13),transparent 60%),
+  radial-gradient(900px 700px at -10% 110%,rgba(65,173,236,.09),transparent 60%),var(--ink);}
+.bg-dots::after{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.4px);
+  background-size:26px 26px;mask-image:radial-gradient(ellipse at 50% 30%,black,transparent 75%);}
+
+/* ============ SCROLL PROGRESS ============ */
+#progress{position:fixed;top:0;left:0;height:2.5px;width:0;background:var(--grad);z-index:1001;transition:width .12s linear}
+
+/* ============ NAV ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .45s var(--ease),box-shadow .45s var(--ease),backdrop-filter .45s}
+header.scrolled{background:rgba(10,19,34,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{max-width:1280px;margin:0 auto;height:var(--nav-h);display:flex;align-items:center;gap:28px;padding:0 28px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-x{width:38px;height:38px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:21px;color:#fff;box-shadow:0 6px 18px rgba(11,114,231,.45);transition:transform .4s var(--ease)}
+.brand:hover .brand-x{transform:rotate(-8deg) scale(1.06)}
+.brand-name{font-weight:700;letter-spacing:.14em;font-size:14.5px}
+.brand-tag{display:block;font-size:8.5px;letter-spacing:.32em;color:var(--blue);font-weight:600;margin-top:2px}
+nav.primary{display:flex;gap:6px;margin-left:auto}
+nav.primary a{font-size:11.5px;letter-spacing:.18em;font-weight:600;color:var(--muted);padding:9px 13px;border-radius:var(--pill);transition:color .3s,background .3s;text-transform:uppercase}
+nav.primary a:hover{color:var(--txt);background:var(--glass-2)}
+nav.primary a.active{color:var(--txt);background:var(--glass-2)}
+.cta-nav{flex-shrink:0;margin-left:8px}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:var(--pill);font-weight:600;letter-spacing:.02em;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s,color .3s;will-change:transform}
+.btn-primary{background:var(--grad);color:#fff;padding:12px 24px;font-size:14px;box-shadow:0 8px 24px rgba(11,114,231,.38)}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 14px 34px rgba(11,114,231,.5)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--txt);padding:12px 24px;font-size:14px;background:rgba(255,255,255,.03)}
+.btn-ghost:hover{background:var(--glass-2);transform:translateY(-2px)}
+.btn-sm{padding:9px 18px;font-size:12.5px}
+.burger{display:none;flex-direction:column;gap:5px;margin-left:auto;padding:10px}
+.burger span{width:22px;height:2px;background:var(--txt);border-radius:2px;transition:.35s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:var(--nav-h) 0 0 0;background:rgba(10,19,34,.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:999;display:flex;flex-direction:column;padding:34px 30px;gap:6px;transform:translateY(-104%);transition:transform .55s var(--ease);overflow:auto}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{font-family:var(--serif);font-size:clamp(28px,7vw,40px);font-weight:500;padding:12px 0;border-bottom:1px solid var(--line);opacity:0;transform:translateY(18px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.mobile-menu.open a{opacity:1;transform:none}
+.mobile-menu a em{color:var(--blue);font-style:italic}
+
+/* ============ LAYOUT / TYPE ============ */
+main{position:relative;z-index:1}
+.page{display:none;animation:pageIn .7s var(--ease)}
+.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.3em;font-weight:700;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);border:1px solid rgba(65,173,236,.25);padding:9px 18px;border-radius:var(--pill)}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1.display{font-family:var(--serif);font-weight:500;font-size:clamp(52px,9.5vw,128px);line-height:1.02;letter-spacing:-.015em}
+h1.display em,.serif-em{font-style:italic;background:linear-gradient(110deg,#6CC4F4,#41ADEC 45%,#0B72E7);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2.title{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.4vw,64px);line-height:1.06;letter-spacing:-.01em}
+h2.title em{font-style:italic;color:var(--blue)}
+.lead{color:var(--muted);font-size:clamp(16px,1.6vw,19px);line-height:1.75;font-weight:400}
+section{padding:clamp(70px,9vw,130px) 0;position:relative}
+.sec-head{display:flex;flex-direction:column;gap:18px;max-width:760px;margin-bottom:clamp(36px,5vw,64px)}
+.center{align-items:center;text-align:center;margin-left:auto;margin-right:auto}
+
+/* ============ REVEAL ANIMATIONS ============ */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv-r{opacity:0;transform:translateX(44px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv-l.vis,.rv-r.vis{opacity:1;transform:none}
+.rv-scale{opacity:0;transform:scale(.92);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv-scale.vis{opacity:1;transform:none}
+[data-stagger]>*{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+[data-stagger].vis>*{opacity:1;transform:none}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:30px;padding:calc(var(--nav-h) + 50px) 28px 70px;position:relative;overflow:hidden}
+#hero3d{position:absolute;inset:0;z-index:-1;opacity:.85}
+.hero .lead{max-width:640px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.hero-scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted-2);font-size:10px;letter-spacing:.3em;text-transform:uppercase}
+.hero-scroll i{width:1px;height:44px;background:linear-gradient(var(--blue),transparent);display:block;animation:drip 2s var(--ease) infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ MARQUEE ============ */
+.marquee{border-block:1px solid var(--line);padding:20px 0;overflow:hidden;background:rgba(255,255,255,.02)}
+.marquee-track{display:flex;gap:54px;width:max-content;animation:scrollX 36s linear infinite}
+.marquee-track span{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted-2);font-weight:600;display:flex;align-items:center;gap:54px;white-space:nowrap}
+.marquee-track span::after{content:"✦";color:var(--blue);font-size:11px}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+
+/* ============ STATS ============ */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+.stat{background:var(--ink-2);padding:38px 30px;display:flex;flex-direction:column;gap:8px;transition:background .4s}
+.stat:hover{background:var(--ink-3)}
+.stat b{font-family:var(--serif);font-size:clamp(34px,4vw,52px);font-weight:500;color:var(--txt)}
+.stat b i{font-style:italic;color:var(--blue);font-size:.7em}
+.stat span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-2);font-weight:600}
+
+/* ============ CARDS / GRID ============ */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:var(--rad);padding:34px 30px;position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .4s,background .4s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 280px at var(--mx,50%) var(--my,0%),rgba(65,173,236,.13),transparent 65%);opacity:0;transition:opacity .45s}
+.card:hover::before{opacity:1}
+.card:hover{border-color:var(--line-2);background:var(--glass-2)}
+.card .kicker{font-size:10px;letter-spacing:.3em;font-weight:700;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:block}
+.card h3{font-family:var(--serif);font-size:clamp(21px,2.2vw,27px);font-weight:500;margin-bottom:12px}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.7}
+.card .go{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:11.5px;letter-spacing:.22em;font-weight:700;text-transform:uppercase;color:var(--txt)}
+.card .go::after{content:"→";color:var(--blue);transition:transform .35s var(--ease)}
+.card:hover .go::after{transform:translateX(6px)}
+.icon-chip{width:54px;height:54px;border-radius:16px;background:linear-gradient(150deg,rgba(65,173,236,.22),rgba(11,114,231,.06));border:1px solid rgba(65,173,236,.32);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 8px 20px rgba(11,114,231,.16);display:grid;place-items:center;margin-bottom:22px;color:var(--blue);transition:transform .5s var(--ease)}
+.ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tool-tab .ico{width:22px;height:22px;margin:0 auto;color:var(--muted);transition:color .3s,transform .4s var(--ease)}
+.tool-tab:hover .ico{color:var(--txt);transform:translateY(-2px)}
+.tool-tab.active .ico{color:var(--blue)}
+.ci .icon-chip .ico{width:19px;height:19px}
+.card-viz{height:118px;margin-bottom:20px;border-radius:14px;background:linear-gradient(165deg,rgba(65,173,236,.09),rgba(11,114,231,.03));border:1px solid var(--line);overflow:hidden;position:relative}
+.card-viz svg{width:100%;height:100%}
+.card .wm{position:absolute;right:-14px;bottom:-16px;width:120px;height:120px;color:var(--blue);opacity:.06;fill:none;stroke:currentColor;stroke-width:.9;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-8deg);transition:opacity .5s,transform .6s var(--ease);pointer-events:none}
+.card:hover .wm{opacity:.14;transform:rotate(-2deg) scale(1.06)}
+.avatar{width:58px;height:58px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:700;font-size:17px;letter-spacing:.04em;color:#fff;box-shadow:0 10px 26px rgba(11,114,231,.45),inset 0 1px 0 rgba(255,255,255,.3)}
+.article .thumb{width:94px;height:70px;border-radius:14px;background:linear-gradient(150deg,rgba(65,173,236,.2),rgba(11,114,231,.07));border:1px solid rgba(65,173,236,.3);display:grid;place-items:center;color:var(--blue);flex-shrink:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.svg-label{font-family:Inter,sans-serif;letter-spacing:.18em;font-weight:700}
+.card:hover .icon-chip{transform:translateZ(30px) scale(1.08)}
+
+/* ============ FEATURE SPLIT ============ */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,80px);align-items:center}
+.split .visual{border-radius:var(--rad);border:1px solid var(--line);background:linear-gradient(160deg,var(--ink-2),var(--ink-3));min-height:420px;position:relative;overflow:hidden;display:grid;place-items:center}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
+.feature-list{display:flex;flex-direction:column;gap:0;margin-top:10px}
+.feature-li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.feature-li:last-child{border-bottom:none}
+.feature-li .n{font-family:var(--serif);font-style:italic;color:var(--blue);font-size:20px;min-width:34px;padding-top:1px}
+.feature-li h4{font-size:15.5px;font-weight:600;margin-bottom:5px}
+.feature-li p{color:var(--muted);font-size:13.5px;line-height:1.65}
+
+/* ============ TOOLS / CALCULATOR ============ */
+.tool-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:34px}
+.tool-tab{border:1px solid var(--line);background:var(--glass);border-radius:var(--rad-sm);padding:18px 14px;text-align:center;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.tool-tab b{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-top:10px}
+.tool-tab .t-ico{font-size:22px;opacity:.9}
+.tool-tab:hover{transform:translateY(-4px);border-color:var(--line-2);background:var(--glass-2)}
+.tool-tab.active{background:linear-gradient(150deg,rgba(65,173,236,.2),rgba(11,114,231,.12));border-color:rgba(65,173,236,.55);box-shadow:0 10px 30px rgba(11,114,231,.25)}
+.tool-tab.active b{color:var(--blue)}
+.calc-shell{display:grid;grid-template-columns:1.02fr .98fr;gap:24px;align-items:start}
+.calc-panel{background:var(--glass);border:1px solid var(--line);border-radius:var(--rad);padding:clamp(24px,3vw,40px)}
+.calc-panel h3{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);font-weight:500;margin-bottom:6px}
+.calc-sub{color:var(--muted-2);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:26px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-group{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.f-group label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.f-group input,.f-group select{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15.5px;color:var(--txt);outline:none;transition:border-color .3s,box-shadow .3s;width:100%;appearance:none}
+.f-group input:focus,.f-group select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15)}
+.f-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2393A3BC' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:rgba(255,255,255,.03)}
+.toggle-row span{font-size:13.5px;font-weight:500;color:var(--muted)}
+.switch{width:46px;height:26px;border-radius:99px;background:rgba(255,255,255,.12);position:relative;transition:background .3s;flex-shrink:0}
+.switch::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#fff;top:3px;left:3px;transition:transform .35s var(--ease)}
+.switch.on{background:var(--blue-2)}
+.switch.on::after{transform:translateX(20px)}
+.result-hero{background:linear-gradient(150deg,rgba(65,173,236,.16),rgba(11,114,231,.07));border:1px solid rgba(65,173,236,.35);border-radius:var(--rad);padding:30px;text-align:center;margin-bottom:18px;position:relative;overflow:hidden}
+.result-hero::after{content:"";position:absolute;top:-60%;left:-20%;width:60%;height:220%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.07),transparent);transform:rotate(8deg);animation:sheen 5s var(--ease) infinite}
+@keyframes sheen{0%,60%{left:-40%}100%{left:130%}}
+.result-hero span{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.result-hero b{display:block;font-family:var(--serif);font-size:clamp(38px,4.6vw,56px);font-weight:500;margin-top:8px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.result-mini{background:var(--glass);border:1px solid var(--line);border-radius:var(--rad-sm);padding:18px;text-align:center}
+.result-mini span{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--muted-2);display:block}
+.result-mini b{font-family:var(--serif);font-size:clamp(19px,2vw,25px);font-weight:500;margin-top:6px;display:block}
+.bar-viz{display:flex;height:14px;border-radius:99px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
+.bar-viz i{display:block;transition:width 1s var(--ease)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px}
+.legend span{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:7px;font-weight:500}
+.legend i{width:10px;height:10px;border-radius:3px;display:block}
+.breakdown{border:1px solid var(--line);border-radius:var(--rad-sm);overflow:hidden}
+.breakdown .row{display:flex;justify-content:space-between;padding:13px 18px;font-size:13.5px;border-bottom:1px solid var(--line);color:var(--muted)}
+.breakdown .row:last-child{border-bottom:none}
+.breakdown .row b{color:var(--txt);font-weight:600;font-variant-numeric:tabular-nums}
+.breakdown .row.total{background:rgba(65,173,236,.08);color:var(--txt);font-weight:600}
+.disclaimer{font-size:11.5px;color:var(--muted-2);line-height:1.6;margin-top:16px}
+
+/* ============ TESTIMONIALS ============ */
+.testi-stage{position:relative;max-width:880px;margin:0 auto;min-height:300px}
+.testi{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px;opacity:0;transform:translateY(26px) scale(.97);transition:opacity .8s var(--ease),transform .8s var(--ease);pointer-events:none;padding:0 12px}
+.testi.on{opacity:1;transform:none;pointer-events:auto}
+.testi q{font-family:var(--serif);font-size:clamp(21px,3vw,32px);font-weight:400;line-height:1.45;quotes:"\201C" "\201D"}
+.testi q em{font-style:italic;color:var(--blue)}
+.testi .who b{display:block;font-size:15px;font-weight:600}
+.testi .who span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted-2);font-weight:600;margin-top:5px;display:block}
+.testi-dots{display:flex;gap:10px;justify-content:center;margin-top:34px}
+.testi-dots button{width:34px;height:4px;border-radius:99px;background:var(--line-2);transition:background .4s,width .4s var(--ease)}
+.testi-dots button.on{background:var(--blue);width:54px}
+
+/* ============ KNOWLEDGE ============ */
+.article{display:grid;grid-template-columns:auto auto 1fr auto;gap:26px;align-items:center;padding:30px 6px;border-bottom:1px solid var(--line);transition:background .35s,padding .45s var(--ease);border-radius:14px}
+.article:hover{background:var(--glass);padding-left:22px;padding-right:22px}
+.article .date{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);font-weight:700;min-width:92px}
+.article h3{font-family:var(--serif);font-size:clamp(19px,2.4vw,28px);font-weight:500;margin-bottom:7px}
+.article p{color:var(--muted);font-size:13.5px;line-height:1.65;max-width:600px}
+.article .tag{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--blue);background:var(--blue-soft);padding:6px 13px;border-radius:99px;white-space:nowrap}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{background:linear-gradient(150deg,var(--ink-3),var(--ink-2));border:1px solid var(--line);border-radius:calc(var(--rad) + 8px);padding:clamp(46px,7vw,90px) clamp(28px,6vw,80px);text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(11,114,231,.22),transparent 65%);top:-280px;left:50%;transform:translateX(-50%)}
+.cta-banner h2{position:relative}
+.cta-banner .lead{max-width:560px;margin:18px auto 34px;position:relative}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);background:rgba(255,255,255,.018);margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:64px 0 50px}
+.foot-grid h5{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted-2);font-weight:700;margin-bottom:18px}
+.foot-grid a{display:block;color:var(--muted);font-size:13.5px;padding:5.5px 0;transition:color .3s}
+.foot-grid a:hover{color:var(--blue)}
+.foot-brand p{color:var(--muted-2);font-size:13px;line-height:1.7;margin-top:16px;max-width:300px}
+.foot-base{border-top:1px solid var(--line);padding:24px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted-2)}
+
+/* ============ MISC PAGES ============ */
+.page-hero{padding:calc(var(--nav-h) + clamp(60px,9vw,110px)) 0 clamp(40px,5vw,70px);text-align:center}
+.page-hero .lead{max-width:620px;margin:22px auto 0}
+.value-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.timeline{position:relative;max-width:760px;margin:0 auto;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--blue),transparent)}
+.tl-item{position:relative;padding-bottom:38px}
+.tl-item::before{content:"";position:absolute;left:-31px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--ink);border:2.5px solid var(--blue);box-shadow:0 0 14px rgba(65,173,236,.5)}
+.tl-item h4{font-family:var(--serif);font-size:21px;font-weight:500;margin-bottom:7px}
+.tl-item p{color:var(--muted);font-size:14px;line-height:1.7;max-width:560px}
+.tl-item .yr{font-size:10px;letter-spacing:.3em;color:var(--blue);font-weight:700;text-transform:uppercase;display:block;margin-bottom:8px}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:26px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:14px}
+.ci{display:flex;gap:18px;align-items:flex-start;background:var(--glass);border:1px solid var(--line);border-radius:var(--rad-sm);padding:22px}
+.ci .icon-chip{margin:0;width:44px;height:44px;font-size:18px;flex-shrink:0}
+.ci b{font-size:14.5px;font-weight:600;display:block;margin-bottom:4px}
+.ci p,.ci a{color:var(--muted);font-size:13.5px;line-height:1.6}
+.ci a:hover{color:var(--blue)}
+textarea{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px;color:var(--txt);outline:none;width:100%;min-height:130px;resize:vertical;font-family:inherit;transition:border-color .3s,box-shadow .3s}
+textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15)}
+.form-ok{display:none;background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.4);color:#7CE49A;border-radius:12px;padding:16px;font-size:14px;margin-top:14px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1080px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .calc-shell{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  .split .visual{min-height:320px;order:-1}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  nav.primary,.cta-nav{display:none}
+  .burger{display:flex}
+}
+@media (max-width:640px){
+  .g2,.g3,.g4,.value-row,.contact-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .f-row,.result-grid{grid-template-columns:1fr}
+  .article{grid-template-columns:auto 1fr;gap:12px 16px}
+  .article .date{grid-column:2}
+  .article>div{grid-column:1/-1}
+  .article .tag{grid-column:1/-1;justify-self:start}
+  .article .tag{justify-self:start}
+  .wrap{padding:0 20px}
+  .hero{padding-top:calc(var(--nav-h) + 30px)}
+  .hero-scroll{display:none}
+  .tool-rail{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.15s!important}
+  .rv,.rv-l,.rv-r,.rv-scale,[data-stagger]>*{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="bg-dots"></div>
+<div id="progress"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6CC4F4"/><stop offset="1" stop-color="#0B72E7"/></linearGradient>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M14 8H8"/><path d="M16 12H8"/><path d="M13 16H8"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+<symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+<symbol id="i-usercheck" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
+<symbol id="i-banknote" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></symbol>
+<symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-badge" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></symbol>
+<symbol id="i-percent" viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+<symbol id="i-pie" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+</svg>
+
+<header id="hdr">
+  <div class="nav-inner">
+    <a class="brand" href="#/">
+      <span class="brand-x">X</span>
+      <span><span class="brand-name">X CONSULTANTS</span><span class="brand-tag">CLARITY IN NUMBERS</span></span>
+    </a>
+    <nav class="primary" id="navLinks">
+      <a href="#/services" data-r="services">Services</a>
+      <a href="#/knowledge" data-r="knowledge">Knowledge Hub</a>
+      <a href="#/tools" data-r="tools">Tools</a>
+      <a href="#/about" data-r="about">About</a>
+      <a href="#/contact" data-r="contact">Contact</a>
+    </nav>
+    <a href="#/contact" class="btn btn-primary btn-sm cta-nav">Book Consultation</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mMenu">
+  <a href="#/">Home</a>
+  <a href="#/services">Services</a>
+  <a href="#/knowledge">Knowledge <em>Hub</em></a>
+  <a href="#/tools">Tax <em>Tools</em></a>
+  <a href="#/about">About</a>
+  <a href="#/contact">Contact</a>
+  <a href="#/contact" style="border:none;color:var(--blue)">Book a Consultation →</a>
+</div>
+
+<main>
+<!-- ================= HOME ================= -->
+<section class="page" data-page="home" style="padding:0">
+  <div class="hero">
+    <canvas id="hero3d"></canvas>
+    <span class="eyebrow rv vis">UK Tax &amp; Business Strategy Experts</span>
+    <h1 class="display">Clarity in <em>Numbers.</em><br>Confidence in <em>Growth.</em></h1>
+    <p class="lead">We empower UK directors, sole traders and SMEs with proactive accountancy and tax planning. Compliant, strategic, and focused on your success.</p>
+    <div class="hero-cta">
+      <a href="#/tools" class="btn btn-primary">Explore Tax Tools</a>
+      <a href="#/contact" class="btn btn-ghost">Book a Consultation</a>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span><i></i></div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track" id="mTrack">
+      <span>ACCA Qualified</span><span>HMRC Compliant</span><span>MTD Ready</span><span>2026/27 Tax Year</span><span>Reading · UK</span><span>Cloud-Native Accounting</span><span>Self Assessment</span><span>Corporation Tax</span><span>VAT Specialists</span>
+    </div>
+  </div>
+
+  <section><div class="wrap">
+    <div class="stats rv" data-stagger>
+      <div class="stat"><b data-count="500" data-suffix="+">0</b><span>Clients Advised</span></div>
+      <div class="stat"><b data-count="12" data-suffix="+">0</b><span>Years of Expertise</span></div>
+      <div class="stat"><b>£<i style="font-size:1em;font-style:normal" data-count="4.2" data-decimal="1">0</i>m<i>+</i></b><span>Tax Saved for Clients</span></div>
+      <div class="stat"><b data-count="98" data-suffix="%">0</b><span>Client Retention</span></div>
+    </div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Precision Instruments</span>
+      <h2 class="title">Our Tax <em>Calculators.</em></h2>
+      <p class="lead">Interactive modelling instruments engineered for the modern UK enterprise — updated for the 2026/27 tax year. Choose your instrument to begin.</p>
+    </div>
+    <div class="grid g4 rv" data-stagger id="homeToolGrid"></div>
+    <div style="text-align:center;margin-top:38px" class="rv"><a href="#/tools" class="btn btn-primary">Open the Full Suite</a></div>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Enterprise</span>
+      <h2 class="title">Accountancy <em>Services.</em></h2>
+      <p class="lead">High-performance financial stewardship across the core pillars of UK business compliance and growth.</p>
+    </div>
+    <div class="grid g4 rv" data-stagger>
+      <a class="card tilt" href="#/services"><span class="kicker">Compliance Mastery</span><div class="icon-chip"><svg class="ico"><use href="#i-receipt"/></svg></div><h3>VAT Services</h3><p>Strategic VAT planning, registration and Making Tax Digital compliance.</p><svg class="wm"><use href="#i-receipt"/></svg><span class="go">Learn more</span></a>
+      <a class="card tilt" href="#/services"><span class="kicker">Precision First</span><div class="icon-chip"><svg class="ico"><use href="#i-book"/></svg></div><h3>Bookkeeping</h3><p>Cloud-native ledger management for complete financial health and visibility.</p><svg class="wm"><use href="#i-book"/></svg><span class="go">Learn more</span></a>
+      <a class="card tilt" href="#/services"><span class="kicker">Statutory Excellence</span><div class="icon-chip"><svg class="ico"><use href="#i-filecheck"/></svg></div><h3>Year End Accounts</h3><p>Statutory accounts preparation and filing, on time and stress-free.</p><svg class="wm"><use href="#i-filecheck"/></svg><span class="go">Learn more</span></a>
+      <a class="card tilt" href="#/services"><span class="kicker">Personal Tax</span><div class="icon-chip"><svg class="ico"><use href="#i-usercheck"/></svg></div><h3>Self Assessment</h3><p>Personal tax returns with proactive, strategic planning built in.</p><svg class="wm"><use href="#i-usercheck"/></svg><span class="go">Learn more</span></a>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="split">
+      <div class="rv-l">
+        <span class="eyebrow">Structural Advisory</span>
+        <h2 class="title" style="margin:18px 0">Company Formation &amp; <em>Structure.</em></h2>
+        <p class="lead">Architecting your corporate structure for optimal tax efficiency from day one. We handle the complexity — you build the vision.</p>
+        <div class="feature-list">
+          <div class="feature-li"><span class="n">01</span><div><h4>New Venture Planning</h4><p>Limited company vs sole trader analysis, incorporation and registration handled end-to-end.</p></div></div>
+          <div class="feature-li"><span class="n">02</span><div><h4>Group Reorganisations</h4><p>Holding structures, share schemes and demergers designed around your growth plans.</p></div></div>
+          <div class="feature-li"><span class="n">03</span><div><h4>Profit Extraction Models</h4><p>Tax-efficient salary, dividend and pension blends — recalibrated for the 2026/27 dividend rate rises.</p></div></div>
+        </div>
+        <a href="#/contact" class="btn btn-primary" style="margin-top:28px">Launch Your Venture</a>
+      </div>
+      <div class="visual rv-r tilt">
+        <div class="orb" style="width:300px;height:300px;background:#0B72E7;top:-80px;right:-60px"></div>
+        <div class="orb" style="width:240px;height:240px;background:#41ADEC;bottom:-70px;left:-50px;opacity:.35"></div>
+        <svg viewBox="0 0 380 310" width="86%" style="position:relative">
+          <g fill="none" stroke="rgba(65,173,236,.5)" stroke-width="1.6" stroke-dasharray="5 6">
+            <path d="M190 52v32"><animate attributeName="stroke-dashoffset" from="22" to="0" dur="1.6s" repeatCount="indefinite"/></path>
+            <path d="M190 138v28M190 166H120v30M190 166h70v30"><animate attributeName="stroke-dashoffset" from="22" to="0" dur="1.6s" repeatCount="indefinite"/></path>
+          </g>
+          <circle cx="190" cy="32" r="20" fill="rgba(65,173,236,.14)" stroke="url(#gB)" stroke-width="1.6"/>
+          <text x="190" y="37" text-anchor="middle" fill="#F4F7FB" font-size="13" font-weight="600">You</text>
+          <g>
+            <rect x="130" y="86" width="120" height="52" rx="14" fill="rgba(255,255,255,.05)" stroke="url(#gB)" stroke-width="1.8"/>
+            <text x="190" y="108" text-anchor="middle" fill="#F4F7FB" font-size="13" font-weight="700" letter-spacing="2">HOLDCO</text>
+            <text x="190" y="125" text-anchor="middle" fill="#93A3BC" font-size="9" letter-spacing="1.5">PARENT COMPANY</text>
+          </g>
+          <g>
+            <rect x="56" y="196" width="128" height="52" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(65,173,236,.45)" stroke-width="1.4"/>
+            <text x="120" y="218" text-anchor="middle" fill="#F4F7FB" font-size="12" font-weight="600">Trading Ltd</text>
+            <text x="120" y="234" text-anchor="middle" fill="#93A3BC" font-size="9" letter-spacing="1.5">OPERATIONS</text>
+            <rect x="196" y="196" width="128" height="52" rx="14" fill="rgba(255,255,255,.04)" stroke="rgba(65,173,236,.45)" stroke-width="1.4"/>
+            <text x="260" y="218" text-anchor="middle" fill="#F4F7FB" font-size="12" font-weight="600">Property SPV</text>
+            <text x="260" y="234" text-anchor="middle" fill="#93A3BC" font-size="9" letter-spacing="1.5">ASSETS</text>
+          </g>
+          <g>
+            <rect x="262" y="76" width="86" height="26" rx="13" fill="rgba(11,114,231,.18)" stroke="rgba(65,173,236,.5)" stroke-width="1"/>
+            <text x="305" y="93" text-anchor="middle" fill="#6CC4F4" font-size="10" font-weight="700">19% CT rate</text>
+            <rect x="30" y="120" width="92" height="26" rx="13" fill="rgba(11,114,231,.18)" stroke="rgba(65,173,236,.5)" stroke-width="1"/>
+            <text x="76" y="137" text-anchor="middle" fill="#6CC4F4" font-size="10" font-weight="700">Group relief</text>
+            <rect x="216" y="262" width="116" height="26" rx="13" fill="rgba(11,114,231,.18)" stroke="rgba(65,173,236,.5)" stroke-width="1"/>
+            <text x="274" y="279" text-anchor="middle" fill="#6CC4F4" font-size="10" font-weight="700">Tax-free transfers</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="split">
+      <div class="visual rv-l tilt" style="min-height:360px">
+        <div class="orb" style="width:280px;height:280px;background:#41ADEC;top:-90px;left:-70px;opacity:.3"></div>
+        <svg viewBox="0 0 340 280" width="82%" style="position:relative">
+          <rect x="108" y="14" width="124" height="252" rx="24" fill="#0C1730" stroke="rgba(255,255,255,.16)" stroke-width="1.6"/>
+          <rect x="148" y="26" width="44" height="6" rx="3" fill="rgba(255,255,255,.14)"/>
+          <text x="170" y="62" text-anchor="middle" fill="#93A3BC" font-size="8.5" letter-spacing="2.5" font-weight="700">TODAY'S FARES</text>
+          <text x="170" y="92" text-anchor="middle" fill="#F4F7FB" font-size="24" font-weight="600" font-family="Georgia,serif">£186.40</text>
+          <text x="170" y="108" text-anchor="middle" fill="#41ADEC" font-size="9" font-weight="700">▲ 12% vs last week</text>
+          <g fill="rgba(65,173,236,.3)"><rect x="126" y="148" width="11" height="26" rx="4"/><rect x="143" y="138" width="11" height="36" rx="4"/><rect x="160" y="128" width="11" height="46" rx="4"/><rect x="194" y="144" width="11" height="30" rx="4"/></g>
+          <rect x="177" y="118" width="11" height="56" rx="4" fill="url(#gB)"/>
+          <g stroke="rgba(147,163,188,.4)" stroke-width="2" stroke-linecap="round"><path d="M126 196h64M126 212h88M126 228h48"/></g>
+          <circle cx="206" cy="246" r="13" fill="url(#gB)"/><path d="m200 246 4 4 8-8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <g>
+            <rect x="10" y="78" width="92" height="34" rx="17" fill="rgba(11,114,231,.2)" stroke="rgba(65,173,236,.5)" stroke-width="1.2"/>
+            <text x="56" y="99" text-anchor="middle" fill="#6CC4F4" font-size="11" font-weight="700">45p / mile</text>
+            <rect x="240" y="150" width="92" height="34" rx="17" fill="rgba(11,114,231,.2)" stroke="rgba(65,173,236,.5)" stroke-width="1.2"/>
+            <text x="286" y="171" text-anchor="middle" fill="#6CC4F4" font-size="11" font-weight="700">24hr support</text>
+            <circle cx="262" cy="58" r="22" fill="rgba(65,173,236,.14)" stroke="url(#gB)" stroke-width="1.5"/>
+            <g transform="translate(250,46)"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" fill="none" stroke="#6CC4F4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" fill="none" stroke="#6CC4F4" stroke-width="1.7"/><path d="M9 17h6" stroke="#6CC4F4" stroke-width="1.7" stroke-linecap="round"/><circle cx="17" cy="17" r="2" fill="none" stroke="#6CC4F4" stroke-width="1.7"/></g>
+          </g>
+        </svg>
+      </div>
+      <div class="rv-r">
+        <span class="eyebrow">Sector Specialist</span>
+        <h2 class="title" style="margin:18px 0">Taxi Driver <em>Specialist</em> Support.</h2>
+        <p class="lead">Dedicated accountancy for Uber, Bolt and Private Hire drivers. We understand the specific deductions for fuel, car maintenance, commission and licensing that maximise your take-home pay.</p>
+        <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+          <a href="#/tools?tab=taxi" class="btn btn-primary">Taxi Tax Calculator</a>
+          <a href="#/contact" class="btn btn-ghost">Taxi Tax Package</a>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head center rv"><span class="eyebrow">Client Success</span><h2 class="title">Trusted by <em>Industry Leaders.</em></h2></div>
+    <div class="testi-stage rv" id="testiStage">
+      <div class="testi on"><q>X Consultants transformed our tax strategy. Their proactive approach saved us <em>significant liabilities</em> during our expansion.</q><span class="avatar">JW</span><div class="who"><b>James Wilson</b><span>CEO, Techflow UK</span></div></div>
+      <div class="testi"><q>The most precise accountancy firm we've partnered with. Their <em>cloud-native approach</em> makes financial visibility effortless.</q><span class="avatar" style="background:linear-gradient(135deg,#5BC8D9,#0B72E7)">SC</span><div class="who"><b>Sarah Chen</b><span>Director, Artisan Media</span></div></div>
+      <div class="testi"><q>Exceptional structural advice for our group reorganisation. They are more than accountants; they are <em>strategic partners.</em></q><span class="avatar" style="background:linear-gradient(135deg,#8B5CF6,#0B72E7)">DK</span><div class="who"><b>David Knight</b><span>Founder, Knight &amp; Co</span></div></div>
+    </div>
+    <div class="testi-dots" id="testiDots"></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="cta-banner rv-scale">
+      <h2 class="title">Secure your<br><em>financial legacy.</em></h2>
+      <p class="lead">Book a private consultation with our senior partners to discuss your corporate strategy and compliance requirements.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative">
+        <a href="#/contact" class="btn btn-primary">Schedule a Consultation</a>
+        <a href="#/services" class="btn btn-ghost">View Our Services</a>
+      </div>
+    </div>
+  </div></section>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="page" data-page="services">
+  <div class="page-hero wrap">
+    <span class="eyebrow">Full-Service Practice</span>
+    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">Services built for <em>growth.</em></h1>
+    <p class="lead">From statutory compliance to strategic structuring — one ACCA-qualified team across your entire financial operation.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid g3 rv" data-stagger>
+      <div class="card tilt"><span class="kicker">Compliance Mastery</span><div class="icon-chip"><svg class="ico"><use href="#i-receipt"/></svg></div><h3>VAT Services</h3><p>Registration and deregistration, scheme selection (standard, flat-rate, cash accounting), quarterly MTD-compliant filings, and strategic VAT planning for cross-border and digital businesses.</p><svg class="wm"><use href="#i-receipt"/></svg></div>
+      <div class="card tilt"><span class="kicker">Precision First</span><div class="icon-chip"><svg class="ico"><use href="#i-book"/></svg></div><h3>Bookkeeping</h3><p>Cloud-native ledger management on Xero, QuickBooks or FreeAgent. Real-time dashboards, receipt automation, bank reconciliation and monthly management accounts.</p><svg class="wm"><use href="#i-book"/></svg></div>
+      <div class="card tilt"><span class="kicker">Statutory Excellence</span><div class="icon-chip"><svg class="ico"><use href="#i-filecheck"/></svg></div><h3>Year End Accounts</h3><p>Statutory accounts preparation under FRS 102/105, Companies House and HMRC filing, plus a director debrief translating the numbers into decisions.</p><svg class="wm"><use href="#i-filecheck"/></svg></div>
+      <div class="card tilt"><span class="kicker">Personal Tax</span><div class="icon-chip"><svg class="ico"><use href="#i-usercheck"/></svg></div><h3>Self Assessment</h3><p>Personal tax returns for directors, landlords, sole traders and high earners — with planning for the new 2026/27 dividend and property income rates.</p><svg class="wm"><use href="#i-usercheck"/></svg></div>
+      <div class="card tilt"><span class="kicker">Corporate Tax</span><div class="icon-chip"><svg class="ico"><use href="#i-building"/></svg></div><h3>Corporation Tax</h3><p>CT600 preparation, marginal relief optimisation between £50k–£250k profits, capital allowances, R&amp;D claims and group relief planning.</p><svg class="wm"><use href="#i-building"/></svg></div>
+      <div class="card tilt"><span class="kicker">Payroll &amp; CIS</span><div class="icon-chip"><svg class="ico"><use href="#i-banknote"/></svg></div><h3>Payroll Services</h3><p>RTI-compliant payroll, auto-enrolment pensions, P11D benefits and CIS returns for contractors and subcontractors.</p><svg class="wm"><use href="#i-banknote"/></svg></div>
+      <div class="card tilt"><span class="kicker">Structural Advisory</span><div class="icon-chip"><svg class="ico"><use href="#i-rocket"/></svg></div><h3>Company Formation</h3><p>Incorporation, share structuring, registered office and tax-efficient profit extraction models designed from day one.</p><svg class="wm"><use href="#i-rocket"/></svg></div>
+      <div class="card tilt"><span class="kicker">Sector Specialist</span><div class="icon-chip"><svg class="ico"><use href="#i-car"/></svg></div><h3>Taxi &amp; Private Hire</h3><p>Dedicated support for Uber, Bolt and Private Hire drivers — mileage vs actual cost methods, licensing deductions and special package rates.</p><svg class="wm"><use href="#i-car"/></svg></div>
+      <div class="card tilt"><span class="kicker">Growth Partner</span><div class="icon-chip"><svg class="ico"><use href="#i-trend"/></svg></div><h3>Business Advisory</h3><p>Cash-flow forecasting, funding readiness, exit planning and quarterly strategy sessions with a senior partner.</p><svg class="wm"><use href="#i-trend"/></svg></div>
+    </div>
+
+    <section style="padding-bottom:0"><div class="sec-head center rv"><span class="eyebrow">Transparent Pricing</span><h2 class="title">Plans that <em>scale with you.</em></h2><p class="lead">Fixed monthly fees, no surprises. Every engagement begins with a complimentary scoping call.</p></div>
+    <div class="grid g3 rv" data-stagger>
+      <div class="card"><span class="kicker">Sole Trader</span><h3>Essential</h3><p>Self assessment, bookkeeping-lite, unlimited email support and HMRC correspondence handled.</p><span class="go" style="color:var(--blue)">Request a quote</span></div>
+      <div class="card" style="border-color:rgba(65,173,236,.5);background:linear-gradient(160deg,rgba(65,173,236,.1),rgba(11,114,231,.04))"><span class="kicker">Limited Company</span><h3>Professional</h3><p>Year-end accounts, CT600, payroll for directors, VAT filings, self assessment and quarterly check-ins.</p><span class="go" style="color:var(--blue)">Request a quote</span></div>
+      <div class="card"><span class="kicker">Scale &amp; Groups</span><h3>Enterprise</h3><p>Multi-entity consolidation, management reporting, CFO-level advisory and dedicated partner access.</p><span class="go" style="color:var(--blue)">Request a quote</span></div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="rv"><a class="btn btn-primary" href="#/contact">Get Your Tailored Fee — Free Scoping Call</a></div>
+    </section>
+  </div>
+</section>
+
+<!-- ================= TOOLS ================= -->
+<section class="page" data-page="tools">
+  <div class="page-hero wrap">
+    <span class="eyebrow">Precision Instruments · 2026/27</span>
+    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">The Tax <em>Toolkit.</em></h1>
+    <p class="lead">Eight interactive modelling instruments, updated for the 2026/27 UK tax year — including the new dividend rates and Scottish bands.</p>
+  </div>
+  <div class="wrap">
+    <div class="tool-rail rv" id="toolRail"></div>
+    <div class="calc-shell">
+      <div class="calc-panel rv-l" id="calcForm"></div>
+      <div class="rv-r" id="calcOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KNOWLEDGE ================= -->
+<section class="page" data-page="knowledge">
+  <div class="page-hero wrap">
+    <span class="eyebrow">Intellectual Capital</span>
+    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">Insights &amp; <em>Briefs.</em></h1>
+    <p class="lead">Analytical precision regarding UK fiscal change and corporate architecture.</p>
+  </div>
+  <div class="wrap">
+    <div class="rv" data-stagger id="articleList">
+      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pie"/></svg></span><span class="date">Jun 2026</span><div><h3>Dividend tax just rose to 10.75% — your extraction model needs a rethink</h3><p>The 2026/27 basic and higher dividend rates climbed two points. We model the new optimal salary/dividend blend for single-director companies.</p></div><span class="tag">Director's Brief</span></a>
+      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-clipboard"/></svg></span><span class="date">May 2026</span><div><h3>MTD for Income Tax: the April 2026 go-live, one month in</h3><p>Quarterly digital reporting is now live for sole traders and landlords over £50k. What the first filing cycle taught our clients.</p></div><span class="tag">Compliance</span></a>
+      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-trend"/></svg></span><span class="date">Apr 2026</span><div><h3>BADR at 18%: exit timing after the April rise</h3><p>Business Asset Disposal Relief has stepped up again. We quantify the impact on sale proceeds and the case for planning ahead.</p></div><span class="tag">Exit Planning</span></a>
+      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pin"/></svg></span><span class="date">Mar 2026</span><div><h3>Scotland's new 48% top rate — cross-border planning notes</h3><p>The 2026/27 Scottish Budget added pressure at the top. Residence, relocation and pension levers examined.</p></div><span class="tag">Personal Tax</span></a>
+      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-building"/></svg></span><span class="date">Feb 2026</span><div><h3>Marginal relief: the 26.5% trap between £50k and £250k</h3><p>Most directors don't realise profits in the marginal band suffer an effective 26.5%. Three legitimate mitigation routes.</p></div><span class="tag">Corporation Tax</span></a>
+    </div>
+
+    <section style="padding-bottom:0"><div class="cta-banner rv-scale">
+      <span class="eyebrow" style="position:relative">The Director's Circular</span>
+      <h2 class="title" style="margin-top:18px">Analytical precision,<br><em>distributed monthly.</em></h2>
+      <p class="lead">UK fiscal change and corporate architecture, decoded for elite partners. No noise — one brief, once a month.</p>
+      <form style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Requested';">
+        <input type="email" required placeholder="director@company.co.uk" style="background:rgba(255,255,255,.07);border:1px solid var(--line-2);border-radius:980px;padding:13px 22px;font-size:14px;color:var(--txt);outline:none;min-width:min(300px,80vw)">
+        <button class="btn btn-primary" type="submit">Request Circular</button>
+      </form>
+    </div></section>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="page" data-page="about">
+  <div class="page-hero wrap">
+    <span class="eyebrow">The Practice</span>
+    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">Accountants who think like <em>strategists.</em></h1>
+    <p class="lead">ACCA-qualified, Reading-based, and built for the modern UK enterprise. We believe compliance is the floor — strategy is the ceiling.</p>
+  </div>
+  <div class="wrap">
+    <div class="value-row rv" data-stagger>
+      <div class="card tilt"><div class="icon-chip"><svg class="ico"><use href="#i-target"/></svg></div><h3>Precision</h3><p>Every figure reconciled, every deadline met. We run a zero-surprise practice with documented controls on every engagement.</p><svg class="wm"><use href="#i-target"/></svg></div>
+      <div class="card tilt"><div class="icon-chip"><svg class="ico"><use href="#i-zap"/></svg></div><h3>Proactivity</h3><p>We contact you before HMRC does. Rate changes, threshold freezes and budget announcements arrive with a plan attached.</p><svg class="wm"><use href="#i-zap"/></svg></div>
+      <div class="card tilt"><div class="icon-chip"><svg class="ico"><use href="#i-gem"/></svg></div><h3>Partnership</h3><p>Your ambitions set the agenda. From first invoice to exit, we act as the finance function beside you — not a filing service behind you.</p><svg class="wm"><use href="#i-gem"/></svg></div>
+    </div>
+
+    <section style="padding-bottom:0">
+      <div class="sec-head center rv"><span class="eyebrow">Our Journey</span><h2 class="title">Built on <em>trust.</em></h2></div>
+      <div class="timeline rv">
+        <div class="tl-item"><span class="yr">Foundation</span><h4>A practice with a different posture</h4><p>X Consultants was founded in Reading with a simple conviction: SMEs deserve the strategic tax thinking usually reserved for large corporates.</p></div>
+        <div class="tl-item"><span class="yr">Growth</span><h4>Cloud-native from the start</h4><p>We standardised on cloud bookkeeping early, giving clients real-time visibility years before Making Tax Digital made it mandatory.</p></div>
+        <div class="tl-item"><span class="yr">Specialism</span><h4>Sector depth, not breadth alone</h4><p>Dedicated desks for private-hire drivers, contractors and digital businesses — sectors where generic advice quietly costs thousands.</p></div>
+        <div class="tl-item"><span class="yr">Today</span><h4>500+ clients, one standard</h4><p>From sole traders to multi-entity groups, every client gets ACCA-qualified eyes on their numbers and a senior partner on call.</p></div>
+      </div>
+    </section>
+
+    <section style="padding-bottom:0"><div class="cta-banner rv-scale">
+      <h2 class="title">Meet the team behind<br><em>the numbers.</em></h2>
+      <p class="lead">Book a no-obligation call and see whether we're the right fit for your next chapter.</p>
+      <a href="#/contact" class="btn btn-primary" style="position:relative">Start the Conversation</a>
+    </div></section>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page" data-page="contact">
+  <div class="page-hero wrap">
+    <span class="eyebrow">Private Consultation</span>
+    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">Let's talk <em>strategy.</em></h1>
+    <p class="lead">Tell us where you are and where you're heading. A senior partner replies within one working day.</p>
+  </div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info rv-l">
+        <div class="ci"><div class="icon-chip"><svg class="ico"><use href="#i-mail"/></svg></div><div><b>Email</b><a href="mailto:support@xconsultants.co.uk">support@xconsultants.co.uk</a></div></div>
+        <div class="ci"><div class="icon-chip"><svg class="ico"><use href="#i-pin"/></svg></div><div><b>Location</b><p>Reading, Berkshire, United Kingdom</p></div></div>
+        <div class="ci"><div class="icon-chip"><svg class="ico"><use href="#i-clock"/></svg></div><div><b>Hours</b><p>Mon–Fri, 9:00–18:00 · 24hr support for Taxi Package clients</p></div></div>
+        <div class="ci"><div class="icon-chip"><svg class="ico"><use href="#i-badge"/></svg></div><div><b>Credentials</b><p>ACCA Qualified · HMRC Registered Agent · MTD Compliant</p></div></div>
+      </div>
+      <div class="calc-panel rv-r">
+        <h3>Book a consultation</h3>
+        <p class="calc-sub">Confidential · No obligation</p>
+        <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify>
+          <input type="hidden" name="form-name" value="contact">
+          <div class="f-row">
+            <div class="f-group"><label>Full name</label><input name="name" required placeholder="Jane Smith"></div>
+            <div class="f-group"><label>Email</label><input name="email" type="email" required placeholder="jane@company.co.uk"></div>
+          </div>
+          <div class="f-row">
+            <div class="f-group"><label>Phone (optional)</label><input name="phone" placeholder="07···"></div>
+            <div class="f-group"><label>I am a…</label><select name="type"><option>Limited company director</option><option>Sole trader</option><option>Taxi / private hire driver</option><option>Landlord</option><option>Starting a new business</option><option>Other</option></select></div>
+          </div>
+          <div class="f-group"><label>How can we help?</label><textarea name="message" required placeholder="Briefly describe your situation…"></textarea></div>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Request Consultation</button>
+          <div class="form-ok" id="formOk">✓ Thank you — your request has been received. A senior partner will reply within one working day.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#/"><span class="brand-x">X</span><span><span class="brand-name">X CONSULTANTS</span><span class="brand-tag">CLARITY IN NUMBERS</span></span></a>
+        <p>ACCA Qualified Tax &amp; Business Consultants based in Reading, UK. Expert accountancy, VAT and business advisory for the modern enterprise.</p>
+      </div>
+      <div><h5>Practice</h5><a href="#/services">Services</a><a href="#/about">About</a><a href="#/knowledge">Knowledge Hub</a><a href="#/contact">Contact</a></div>
+      <div><h5>Tools</h5><a href="#/tools?tab=salary">Salary &amp; Income</a><a href="#/tools?tab=vat">VAT Calculator</a><a href="#/tools?tab=corp">Corporation Tax</a><a href="#/tools?tab=dividend">Dividend Tax</a><a href="#/tools?tab=taxi">Taxi Specialist</a></div>
+      <div><h5>Get in touch</h5><a href="mailto:support@xconsultants.co.uk">support@xconsultants.co.uk</a><a href="#/contact">Book Consultation</a><a href="#/knowledge">Director's Circular</a></div>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="yr"></span> X Consultants. All rights reserved.</span>
+      <span>Calculators provide 2026/27 estimates only and do not constitute tax advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================= ROUTER ================= */
+const pages=document.querySelectorAll('.page');
+const navLinks=document.querySelectorAll('nav.primary a');
+function route(){
+  let h=location.hash||'#/';
+  let [path,query]=h.replace(/^#\//,'').split('?');
+  path=path||'home';
+  const known=['home','services','tools','knowledge','about','contact'];
+  if(!known.includes(path))path='home';
+  pages.forEach(p=>p.classList.toggle('active',p.dataset.page===path));
+  navLinks.forEach(a=>a.classList.toggle('active',a.dataset.r===path));
+  document.getElementById('mMenu').classList.remove('open');
+  document.getElementById('burger').classList.remove('open');
+  window.scrollTo({top:0,behavior:'instant'});
+  if(path==='tools'){
+    const params=new URLSearchParams(query||'');
+    const t=params.get('tab');
+    if(t&&TOOLS[t])selectTool(t);else if(!currentTool)selectTool('salary');
+  }
+  requestAnimationFrame(observeAll);
+}
+window.addEventListener('hashchange',route);
+
+/* ================= NAV FX ================= */
+const hdr=document.getElementById('hdr');
+const prog=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  hdr.classList.toggle('scrolled',scrollY>24);
+  const d=document.documentElement;
+  prog.style.width=(scrollY/(d.scrollHeight-innerHeight)*100)+'%';
+},{passive:true});
+const burger=document.getElementById('burger'),mMenu=document.getElementById('mMenu');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');mMenu.classList.toggle('open');});
+mMenu.querySelectorAll('a').forEach((a,i)=>a.style.transitionDelay=(0.06*i+0.1)+'s');
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('mTrack').innerHTML+=document.getElementById('mTrack').innerHTML;
+
+/* ================= REVEAL ================= */
+let io;
+function observeAll(){
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('vis');
+      if(e.target.hasAttribute('data-stagger'))[...e.target.children].forEach((c,i)=>c.style.transitionDelay=(i*0.09)+'s');
+      e.target.querySelectorAll('[data-count]').forEach(runCounter);
+      io.unobserve(e.target);
+    }
+  }),{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.page.active .rv,.page.active .rv-l,.page.active .rv-r,.page.active .rv-scale,.page.active [data-stagger]').forEach(el=>{
+    if(!el.classList.contains('vis'))io.observe(el);
+  });
+}
+function runCounter(el){
+  if(el.dataset.done)return;el.dataset.done=1;
+  const target=parseFloat(el.dataset.count),dec=parseInt(el.dataset.decimal||0),suf=el.dataset.suffix||'';
+  const t0=performance.now(),dur=1800;
+  (function tick(t){
+    const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,4);
+    el.textContent=(target*e).toFixed(dec)+(p===1?suf:'');
+    if(p<1)requestAnimationFrame(tick);
+  })(t0);
+}
+
+/* ================= 3D TILT ================= */
+const fine=matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.addEventListener('mousemove',e=>{
+  if(!fine)return;
+  const t=e.target.closest('.tilt,.card');
+  document.querySelectorAll('.tilt,.card').forEach(c=>{
+    if(c!==t){c.style.transform='';return;}
+    const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    c.style.setProperty('--mx',(x*100)+'%');c.style.setProperty('--my',(y*100)+'%');
+    if(c.classList.contains('tilt'))c.style.transform=`perspective(900px) rotateY(${(x-.5)*7}deg) rotateX(${(.5-y)*7}deg) translateY(-3px)`;
+  });
+},{passive:true});
+document.addEventListener('mouseleave',()=>document.querySelectorAll('.tilt').forEach(c=>c.style.transform=''),true);
+
+/* ================= TESTIMONIALS ================= */
+const testis=document.querySelectorAll('#testiStage .testi');
+const dotsBox=document.getElementById('testiDots');
+let tIdx=0,tTimer;
+testis.forEach((_,i)=>{
+  const b=document.createElement('button');
+  b.addEventListener('click',()=>{showTesti(i);resetT();});
+  dotsBox.appendChild(b);
+});
+function showTesti(i){
+  tIdx=i;
+  testis.forEach((t,j)=>t.classList.toggle('on',j===i));
+  dotsBox.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',j===i));
+}
+function resetT(){clearInterval(tTimer);tTimer=setInterval(()=>showTesti((tIdx+1)%testis.length),6000);}
+showTesti(0);resetT();
+
+/* ================= HERO PARTICLE FIELD ================= */
+(function(){
+  const cv=document.getElementById('hero3d');if(!cv)return;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const ctx=cv.getContext('2d');let W,H,pts=[],raf;
+  function size(){
+    const r=cv.parentElement.getBoundingClientRect();
+    const dpr=Math.min(devicePixelRatio||1,2);
+    W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.min(Math.floor(W*H/16000),110);
+    pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.8+.6,z:Math.random()}));
+  }
+  let mx=-999,my=-999;
+  cv.parentElement.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;},{passive:true});
+  cv.parentElement.addEventListener('mouseleave',()=>{mx=my=-999;});
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<-20)p.x=W+20;if(p.x>W+20)p.x=-20;if(p.y<-20)p.y=H+20;if(p.y>H+20)p.y=-20;
+      const dx=p.x-mx,dy=p.y-my,d2=dx*dx+dy*dy;
+      if(d2<14400){const f=(1-d2/14400)*.6;p.x+=dx/Math.sqrt(d2+1)*f;p.y+=dy/Math.sqrt(d2+1)*f;}
+    }
+    ctx.lineWidth=.6;
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+      if(d<13000){ctx.strokeStyle=`rgba(65,173,236,${(1-d/13000)*.16})`;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+    }
+    for(const p of pts){
+      ctx.fillStyle=`rgba(${p.z>.5?'108,196,244':'65,173,236'},${.25+p.z*.45})`;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  size();frame();
+  addEventListener('resize',()=>{cancelAnimationFrame(raf);size();frame();});
+  document.addEventListener('visibilitychange',()=>{document.hidden?cancelAnimationFrame(raf):frame();});
+})();
+
+/* ================= CONTACT FORM ================= */
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  if(location.hostname==='localhost'||location.protocol==='file:'||!document.querySelector('[data-netlify]')){e.preventDefault();}
+  else{e.preventDefault();
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(this)).toString()}).catch(()=>{});
+  }
+  document.getElementById('formOk').style.display='block';
+  this.querySelectorAll('input:not([type=hidden]),textarea').forEach(i=>i.value='');
+});
+
+/* ================================================================
+   TAX ENGINE — 2026/27 UK tax year (estimates)
+================================================================ */
+const Y={
+  PA:12570, PA_TAPER:100000, BASIC:37700, HIGHER_TOP:125140,
+  RUK:[{to:37700,r:.20,n:'Basic 20%'},{to:125140,r:.40,n:'Higher 40%'},{to:Infinity,r:.45,n:'Additional 45%'}],
+  SCO:[{to:3967,r:.19,n:'Starter 19%'},{to:16956,r:.20,n:'Basic 20%'},{to:31092,r:.21,n:'Intermediate 21%'},{to:62430,r:.42,n:'Higher 42%'},{to:112570,r:.45,n:'Advanced 45%'},{to:Infinity,r:.48,n:'Top 48%'}],
+  NI_PT:12570, NI_UEL:50270, NI_MAIN:.08, NI_UPPER:.02,
+  C4_LPL:12570, C4_UPL:50270, C4_MAIN:.06, C4_UPPER:.02,
+  SL:{none:null,p1:{t:26900,r:.09},p2:{t:29385,r:.09},p4:{t:33795,r:.09},p5:{t:25000,r:.09},pg:{t:21000,r:.06}},
+  DIV_ALLOW:500, DIV:[{to:37700,r:.1075},{to:125140,r:.3575},{to:Infinity,r:.3935}],
+  CT_SMALL:.19, CT_MAIN:.25, CT_LOWER:50000, CT_UPPER:250000, CT_FRACTION:3/200,
+  VAT_STD:.20, CGT_AEA:3000, CGT_LO:.18, CGT_HI:.24, BADR:.18,
+  MARRIAGE:1260, BLIND:3130, MILEAGE_HI:.45, MILEAGE_LO:.25, MILEAGE_SPLIT:10000
+};
+const fmt=(n,d=2)=>'£'+(Math.round(n*100)/100).toLocaleString('en-GB',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmt0=n=>'£'+Math.round(n).toLocaleString('en-GB');
+function personalAllowance(ani,opts={}){
+  let pa=Y.PA+(opts.marriage?Y.MARRIAGE:0)+(opts.blind?Y.BLIND:0);
+  if(opts.codePA!=null)pa=opts.codePA+(opts.marriage?Y.MARRIAGE:0)+(opts.blind?Y.BLIND:0);
+  if(ani>Y.PA_TAPER)pa=Math.max(0,pa-(ani-Y.PA_TAPER)/2);
+  return pa;
+}
+function incomeTax(taxable,scottish){
+  const bands=scottish?Y.SCO:Y.RUK;let tax=0,prev=0,detail=[];
+  for(const b of bands){
+    if(taxable<=prev)break;
+    const amt=Math.min(taxable,b.to)-prev;
+    if(amt>0){tax+=amt*b.r;detail.push({n:b.n,amt,tax:amt*b.r});}
+    prev=b.to;
+  }
+  return{tax,detail};
+}
+function employeeNI(gross){
+  let ni=0;
+  if(gross>Y.NI_PT)ni+=(Math.min(gross,Y.NI_UEL)-Y.NI_PT)*Y.NI_MAIN;
+  if(gross>Y.NI_UEL)ni+=(gross-Y.NI_UEL)*Y.NI_UPPER;
+  return Math.max(0,ni);
+}
+function class4NI(profit){
+  let ni=0;
+  if(profit>Y.C4_LPL)ni+=(Math.min(profit,Y.C4_UPL)-Y.C4_LPL)*Y.C4_MAIN;
+  if(profit>Y.C4_UPL)ni+=(profit-Y.C4_UPL)*Y.C4_UPPER;
+  return Math.max(0,ni);
+}
+function studentLoan(gross,plan){
+  const p=Y.SL[plan];if(!p)return 0;
+  return Math.max(0,(gross-p.t)*p.r);
+}
+function corpTax(profit){
+  if(profit<=0)return{tax:0,relief:0,rate:0};
+  if(profit<=Y.CT_LOWER)return{tax:profit*Y.CT_SMALL,relief:0,rate:Y.CT_SMALL};
+  if(profit>=Y.CT_UPPER)return{tax:profit*Y.CT_MAIN,relief:0,rate:Y.CT_MAIN};
+  const relief=(Y.CT_UPPER-profit)*Y.CT_FRACTION;
+  const tax=profit*Y.CT_MAIN-relief;
+  return{tax,relief,rate:tax/profit};
+}
+function sdlt(price,type){
+  let bands;
+  if(type==='ftb'&&price<=500000)bands=[{to:300000,r:0},{to:500000,r:.05}];
+  else bands=[{to:125000,r:0},{to:250000,r:.02},{to:925000,r:.05},{to:1500000,r:.10},{to:Infinity,r:.12}];
+  let tax=0,prev=0,detail=[];
+  for(const b of bands){
+    if(price<=prev)break;
+    const amt=Math.min(price,b.to)-prev;
+    if(amt>0){let r=b.r+(type==='additional'?.05:0);tax+=amt*r;detail.push({n:(b.r*100)+(type==='additional'?'+5':'')+'% band',amt,tax:amt*r});}
+    prev=b.to;
+  }
+  return{tax,detail};
+}
+function dividendTax(salary,divs,opts={}){
+  const total=salary+divs;
+  const pa=personalAllowance(total,opts);
+  const paForSalary=Math.min(pa,salary);
+  const taxableSalary=Math.max(0,salary-paForSalary);
+  const paLeft=Math.max(0,pa-salary);
+  const taxableDivs=Math.max(0,divs-paLeft);
+  const sal=incomeTax(taxableSalary,false);
+  let dTax=0,pos=taxableSalary,allowLeft=Y.DIV_ALLOW,detail=[];
+  let remaining=taxableDivs;
+  for(const b of Y.DIV){
+    if(remaining<=0||pos>=b.to)continue;
+    let slice=Math.min(remaining,b.to-pos);
+    const freed=Math.min(slice,allowLeft);allowLeft-=freed;
+    const taxedAmt=slice-freed;
+    if(taxedAmt>0){dTax+=taxedAmt*b.r;detail.push({n:'Dividends @ '+(b.r*100).toFixed(2)+'%',amt:taxedAmt,tax:taxedAmt*b.r});}
+    pos+=slice;remaining-=slice;
+  }
+  return{salaryTax:sal.tax,salaryDetail:sal.detail,divTax:dTax,divDetail:detail,pa};
+}
+
+/* ================================================================
+   TOOL DEFINITIONS
+================================================================ */
+const C={take:'#41ADEC',tax:'#E25C5C',ni:'#E2A33C',pen:'#8B5CF6',sl:'#5BC8D9',exp:'#6B7C97'};
+const TOOLS={
+salary:{ico:'i-coins',viz:'<svg viewBox="0 0 220 118" preserveAspectRatio="none"><path d="M0 92 C30 86 46 64 72 62 C98 60 112 76 138 56 C164 36 184 44 220 26 L220 118 L0 118 Z" fill="#41ADEC" opacity=".16"/><path d="M0 92 C30 86 46 64 72 62 C98 60 112 76 138 56 C164 36 184 44 220 26" stroke="#41ADEC" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/><circle cx="138" cy="56" r="4" fill="#6CC4F4"/><circle cx="138" cy="56" r="9" fill="#41ADEC" opacity=".22"/><g stroke="rgba(255,255,255,.06)"><path d="M0 30h220M0 60h220M0 90h220"/></g></svg>',label:'Salary & Income',title:'Salary Tax Calculator',sub:'2026/27 UK Tax Year Estimates',
+ fields:[
+  {id:'gross',label:'Annual gross salary (£)',type:'num',def:45000},
+  {id:'pension',label:'Pension contribution (%)',type:'num',def:5},
+  {id:'sl',label:'Student loan',type:'select',def:'none',opts:[['none','No student loan'],['p1','Plan 1 (Pre-2012)'],['p2','Plan 2 (Post-2012)'],['p4','Plan 4 (Scotland)'],['p5','Plan 5 (New 2023)'],['pg','Postgraduate']]},
+  {id:'code',label:'Tax code (optional)',type:'text',def:'1257L'},
+  {id:'scot',label:'Scottish tax rates',type:'toggle',def:false},
+  {id:'blind',label:"Blind Person's Allowance",type:'toggle',def:false},
+  {id:'marriage',label:'Marriage Allowance (recipient)',type:'toggle',def:false}
+ ],
+ calc(v){
+  const gross=v.gross||0,pension=gross*(v.pension||0)/100;
+  const ani=gross-pension;
+  let codePA=null;const m=(v.code||'').trim().match(/^(\d{1,4})\s*[LMNT]$/i);if(m)codePA=parseInt(m[1])*10;
+  const pa=personalAllowance(ani,{marriage:v.marriage,blind:v.blind,codePA});
+  const taxable=Math.max(0,ani-pa);
+  const it=incomeTax(taxable,v.scot);
+  const ni=employeeNI(gross);
+  const sl=studentLoan(gross,v.sl);
+  const take=gross-pension-it.tax-ni-sl;
+  const rows=[{n:'Gross salary',v:gross},{n:'Personal allowance',v:pa},...it.detail.map(d=>({n:d.n+' on '+fmt0(d.amt),v:-d.tax})),{n:'National Insurance (8% / 2%)',v:-ni}];
+  if(pension)rows.push({n:'Pension contribution',v:-pension});
+  if(sl)rows.push({n:'Student loan',v:-sl});
+  return{
+   hero:{label:'Monthly take home',value:fmt(take/12)},
+   minis:[{l:'Weekly take home',v:fmt(take/52)},{l:'Annual take home pay',v:fmt(take)},{l:'Income tax',v:fmt(it.tax)},{l:'National insurance',v:fmt(ni)}],
+   bars:[{l:'Income Tax',v:it.tax,c:C.tax},{l:'National Insurance',v:ni,c:C.ni},{l:'Pension',v:pension,c:C.pen},{l:'Student Loan',v:sl,c:C.sl},{l:'Take Home',v:take,c:C.take}],
+   rows:[...rows,{n:'Annual take home',v:take,total:true}],
+   note:'Estimates use standard 2026/27 rates and a cumulative tax code. Personal circumstances may vary.'
+  };
+ }},
+vat:{ico:'i-percent',viz:'<svg viewBox="0 0 220 118"><g stroke="rgba(255,255,255,.06)"><path d="M0 95h220"/></g><g fill="rgba(65,173,236,.22)"><rect x="26" y="58" width="22" height="37" rx="5"/><rect x="62" y="44" width="22" height="51" rx="5"/><rect x="134" y="52" width="22" height="43" rx="5"/><rect x="170" y="34" width="22" height="61" rx="5"/></g><rect x="98" y="22" width="22" height="73" rx="5" fill="url(#gB)"/><circle cx="172" cy="28" r="15" fill="#0E1A2F" stroke="#41ADEC" stroke-width="1.4"/><text x="172" y="33" text-anchor="middle" fill="#6CC4F4" font-size="12" font-weight="700">%</text></svg>',label:'VAT Calculator',title:'VAT Calculator',sub:'Add or remove VAT · Standard, reduced & zero rates',
+ fields:[
+  {id:'amount',label:'Amount (£)',type:'num',def:1000},
+  {id:'rate',label:'VAT rate',type:'select',def:'20',opts:[['20','Standard — 20%'],['5','Reduced — 5%'],['0','Zero — 0%']]},
+  {id:'dir',label:'Direction',type:'select',def:'add',opts:[['add','Add VAT (net → gross)'],['remove','Remove VAT (gross → net)']]}
+ ],
+ calc(v){
+  const r=parseFloat(v.rate)/100,a=v.amount||0;
+  let net,vat,grossT;
+  if(v.dir==='add'){net=a;vat=a*r;grossT=a+vat;}else{grossT=a;net=a/(1+r);vat=grossT-net;}
+  return{
+   hero:{label:v.dir==='add'?'Gross (inc. VAT)':'Net (ex. VAT)',value:fmt(v.dir==='add'?grossT:net)},
+   minis:[{l:'Net amount',v:fmt(net)},{l:'VAT @ '+(r*100)+'%',v:fmt(vat)}],
+   bars:[{l:'Net',v:net,c:C.take},{l:'VAT',v:vat,c:C.ni}],
+   rows:[{n:'Net amount',v:net},{n:'VAT',v:vat},{n:'Gross amount',v:grossT,total:true}],
+   note:'UK VAT registration threshold: £90,000 taxable turnover in any rolling 12 months. We handle registration and MTD filings.'
+  };
+ }},
+corp:{ico:'i-building',viz:'<svg viewBox="0 0 220 118"><path d="M40 100 A70 70 0 0 1 180 100" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="10" stroke-linecap="round"/><path d="M40 100 A70 70 0 0 1 150 44" fill="none" stroke="url(#gB)" stroke-width="10" stroke-linecap="round"/><line x1="110" y1="100" x2="146" y2="58" stroke="#F4F7FB" stroke-width="2.5" stroke-linecap="round"/><circle cx="110" cy="100" r="6" fill="#6CC4F4"/><text x="110" y="86" text-anchor="middle" fill="#93A3BC" font-size="9" class="svg-label">RATE</text></svg>',label:'Corporation Tax',title:'Corporation Tax Calculator',sub:'FY2026 · Small profits rate, main rate & marginal relief',
+ fields:[{id:'profit',label:'Taxable profit (£)',type:'num',def:120000}],
+ calc(v){
+  const p=v.profit||0,ct=corpTax(p);
+  const after=p-ct.tax;
+  const marginal=p>Y.CT_LOWER&&p<Y.CT_UPPER;
+  return{
+   hero:{label:'Corporation tax due',value:fmt(ct.tax)},
+   minis:[{l:'Effective rate',v:(ct.rate*100).toFixed(2)+'%'},{l:'Profit after tax',v:fmt(after)}],
+   bars:[{l:'Tax',v:ct.tax,c:C.tax},{l:'Retained profit',v:after,c:C.take}],
+   rows:[{n:'Taxable profit',v:p},{n:marginal?'Tax at main rate 25%':'Corporation tax',v:marginal?p*.25:ct.tax},...(marginal?[{n:'Less marginal relief',v:-ct.relief}]:[]),{n:'Tax payable',v:ct.tax,total:true}],
+   note:marginal?'Profits between £50,000 and £250,000 suffer an effective marginal rate of 26.5% on the slice above £50k — talk to us about pension and timing strategies.':'19% small profits rate applies up to £50,000; 25% main rate from £250,000. Associated companies divide these limits.'
+  };
+ }},
+dividend:{ico:'i-pie',viz:'<svg viewBox="0 0 220 118"><g transform="rotate(-90 110 59)"><circle cx="110" cy="59" r="40" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="12"/><circle cx="110" cy="59" r="40" fill="none" stroke="url(#gB)" stroke-width="12" stroke-dasharray="138 251" stroke-linecap="round"/><circle cx="110" cy="59" r="40" fill="none" stroke="#5BC8D9" stroke-width="12" stroke-dasharray="50 251" stroke-dashoffset="-150" stroke-linecap="round" opacity=".7"/></g><text x="110" y="64" text-anchor="middle" fill="#F4F7FB" font-size="17" font-weight="600" font-family="Georgia,serif">£</text></svg>',label:'Dividend Tax',title:'Dividend Tax Calculator',sub:'2026/27 — new 10.75% / 35.75% rates applied',
+ fields:[{id:'salary',label:'Annual salary (£)',type:'num',def:12570},{id:'divs',label:'Annual dividends (£)',type:'num',def:40000}],
+ calc(v){
+  const r=dividendTax(v.salary||0,v.divs||0);
+  const totalTax=r.salaryTax+r.divTax;
+  const net=(v.salary||0)+(v.divs||0)-totalTax-employeeNI(v.salary||0);
+  return{
+   hero:{label:'Dividend tax due',value:fmt(r.divTax)},
+   minis:[{l:'Tax on salary',v:fmt(r.salaryTax)},{l:'Total net income*',v:fmt(net)}],
+   bars:[{l:'Income Tax',v:totalTax,c:C.tax},{l:'NI',v:employeeNI(v.salary||0),c:C.ni},{l:'Net income',v:net,c:C.take}],
+   rows:[{n:'Salary + dividends',v:(v.salary||0)+(v.divs||0)},{n:'Personal allowance',v:r.pa},{n:'Dividend allowance (0%)',v:Y.DIV_ALLOW},...r.divDetail.map(d=>({n:d.n+' on '+fmt0(d.amt),v:-d.tax})),{n:'Total dividend tax',v:r.divTax,total:true}],
+   note:'*Net income includes employee NI on salary. Dividend rates rose 2pts from April 2026 (10.75% basic / 35.75% higher). Profit-extraction blends should be re-modelled — we can help.'
+  };
+ }},
+sa:{ico:'i-clipboard',viz:'<svg viewBox="0 0 220 118"><rect x="72" y="14" width="76" height="92" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(65,173,236,.4)" stroke-width="1.4"/><g stroke="rgba(147,163,188,.55)" stroke-width="2.2" stroke-linecap="round"><path d="M84 34h36M84 48h52M84 62h52M84 76h28"/></g><circle cx="142" cy="88" r="14" fill="url(#gB)"/><path d="m136 88 4 4 8-8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',label:'Self Assessment',title:'Self Assessment Estimator',sub:'Sole trader · Income tax + Class 4 NI · 2026/27',
+ fields:[
+  {id:'profit',label:'Self-employment profit (£)',type:'num',def:38000},
+  {id:'other',label:'Other PAYE income (£)',type:'num',def:0},
+  {id:'scot',label:'Scottish tax rates',type:'toggle',def:false}
+ ],
+ calc(v){
+  const profit=v.profit||0,other=v.other||0,total=profit+other;
+  const pa=personalAllowance(total,{});
+  const taxable=Math.max(0,total-pa);
+  const it=incomeTax(taxable,v.scot);
+  const otherTaxable=Math.max(0,other-pa);
+  const otherTax=incomeTax(otherTaxable,v.scot).tax;
+  const saTax=it.tax-otherTax;
+  const c4=class4NI(profit);
+  const bill=saTax+c4;
+  const poa=bill/2;
+  return{
+   hero:{label:'Estimated tax bill',value:fmt(bill)},
+   minis:[{l:'Income tax',v:fmt(saTax)},{l:'Class 4 NI',v:fmt(c4)},{l:'Payment on account ×2',v:fmt(poa)},{l:'Profit after tax',v:fmt(profit-bill)}],
+   bars:[{l:'Income Tax',v:saTax,c:C.tax},{l:'Class 4 NI',v:c4,c:C.ni},{l:'Kept',v:Math.max(0,profit-bill),c:C.take}],
+   rows:[{n:'Trading profit',v:profit},{n:'Personal allowance',v:pa},...it.detail.map(d=>({n:d.n+' on '+fmt0(d.amt),v:-d.tax})),{n:'Class 4 NI (6% / 2%)',v:-c4},{n:'Total due 31 Jan 2028',v:bill,total:true}],
+   note:'Class 2 NI is now voluntary. Payments on account (50% each) fall due 31 January and 31 July if your bill exceeds £1,000. MTD quarterly reporting applies above £50k from April 2026.'
+  };
+ }},
+taxi:{ico:'i-car',viz:'<svg viewBox="0 0 220 118"><path d="M30 104 A84 84 0 0 1 190 104" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="7" stroke-linecap="round"/><path d="M30 104 A84 84 0 0 1 122 26" fill="none" stroke="url(#gB)" stroke-width="7" stroke-linecap="round"/><g stroke="rgba(147,163,188,.5)" stroke-width="2" stroke-linecap="round"><path d="M48 70l7 5M110 32v9M172 70l-7 5"/></g><text x="110" y="86" text-anchor="middle" fill="#6CC4F4" font-size="16" font-weight="700">45p</text><text x="110" y="100" text-anchor="middle" fill="#93A3BC" font-size="8" class="svg-label">PER MILE</text></svg>',label:'Taxi Specialist',title:'Taxi Driver Tax Calculator',sub:'Uber · Bolt · Private hire — actual costs or mileage method',
+ fields:[
+  {id:'income',label:'Annual gross fares & bonuses (£)',type:'num',def:42000},
+  {id:'method',label:'Expense method',type:'select',def:'actual',opts:[['actual','Actual costs'],['mileage','HMRC mileage rate']]},
+  {id:'fuel',label:'Fuel (£/yr)',type:'num',def:4800,show:v=>v.method==='actual'},
+  {id:'maint',label:'Maintenance & repairs (£/yr)',type:'num',def:1500,show:v=>v.method==='actual'},
+  {id:'ins',label:'Insurance & licensing (£/yr)',type:'num',def:2200,show:v=>v.method==='actual'},
+  {id:'comm',label:'Platform commission (£/yr)',type:'num',def:6300,show:v=>v.method==='actual'},
+  {id:'phone',label:'Phone & other (£/yr)',type:'num',def:600,show:v=>v.method==='actual'},
+  {id:'miles',label:'Business miles (per year)',type:'num',def:25000,show:v=>v.method==='mileage'}
+ ],
+ calc(v){
+  const income=v.income||0;
+  let expenses,expLabel;
+  if(v.method==='mileage'){
+    const m=v.miles||0;
+    expenses=Math.min(m,Y.MILEAGE_SPLIT)*Y.MILEAGE_HI+Math.max(0,m-Y.MILEAGE_SPLIT)*Y.MILEAGE_LO;
+    expLabel='Mileage allowance ('+(m||0).toLocaleString()+' mi)';
+  }else{
+    expenses=(v.fuel||0)+(v.maint||0)+(v.ins||0)+(v.comm||0)+(v.phone||0);
+    expLabel='Allowable expenses';
+  }
+  const profit=Math.max(0,income-expenses);
+  const pa=personalAllowance(profit,{});
+  const it=incomeTax(Math.max(0,profit-pa),false);
+  const c4=class4NI(profit);
+  const take=income-expenses-it.tax-c4;
+  return{
+   hero:{label:'Annual take home',value:fmt(take)},
+   minis:[{l:'Monthly take home',v:fmt(take/12)},{l:'Taxable profit',v:fmt(profit)},{l:'Income tax',v:fmt(it.tax)},{l:'Class 4 NI',v:fmt(c4)}],
+   bars:[{l:'Expenses',v:expenses,c:C.exp},{l:'Tax',v:it.tax,c:C.tax},{l:'NI',v:c4,c:C.ni},{l:'Take Home',v:take,c:C.take}],
+   rows:[{n:'Gross fares & bonuses',v:income},{n:expLabel,v:-expenses},{n:'Taxable profit',v:profit},{n:'Income tax',v:-it.tax},{n:'Class 4 NI',v:-c4},{n:'Take home',v:take,total:true}],
+   note:'Mileage method: 45p/mile first 10,000 miles, 25p thereafter — it often beats actual costs for high-mileage drivers. Our Taxi Package includes 24hr support and special rates.'
+  };
+ }},
+cgt:{ico:'i-trend',viz:'<svg viewBox="0 0 220 118"><path d="M20 98h180" stroke="rgba(255,255,255,.1)" stroke-dasharray="3 5"/><path d="M24 92 h34 v-16 h34 v-16 h34 v-18 h34 v-16 h22" fill="none" stroke="url(#gB)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="m172 20 12 6-9 9" fill="none" stroke="#6CC4F4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="92" r="3.4" fill="#41ADEC"/><circle cx="126" cy="60" r="3.4" fill="#41ADEC"/></svg>',label:'Capital Gains',title:'Capital Gains Tax Calculator',sub:'2026/27 · 18% / 24% · £3,000 annual exemption',
+ fields:[
+  {id:'gain',label:'Total gain (£)',type:'num',def:50000},
+  {id:'income',label:'Taxable income this year (£)',type:'num',def:35000},
+  {id:'type',label:'Disposal type',type:'select',def:'std',opts:[['std','Shares / property / other assets'],['badr','Business sale (BADR @ 18%)']]}
+ ],
+ calc(v){
+  const gain=Math.max(0,(v.gain||0)-Y.CGT_AEA);
+  let tax,detail;
+  if(v.type==='badr'){tax=gain*Y.BADR;detail=[{n:'BADR rate 18% on '+fmt0(gain),amt:gain,tax}];}
+  else{
+    const taxableIncome=Math.max(0,(v.income||0)-Y.PA);
+    const basicLeft=Math.max(0,Y.BASIC-taxableIncome);
+    const lo=Math.min(gain,basicLeft),hi=Math.max(0,gain-basicLeft);
+    tax=lo*Y.CGT_LO+hi*Y.CGT_HI;
+    detail=[];
+    if(lo)detail.push({n:'18% within basic band on '+fmt0(lo),amt:lo,tax:lo*Y.CGT_LO});
+    if(hi)detail.push({n:'24% above basic band on '+fmt0(hi),amt:hi,tax:hi*Y.CGT_HI});
+  }
+  return{
+   hero:{label:'Capital gains tax due',value:fmt(tax)},
+   minis:[{l:'Annual exemption used',v:fmt(Math.min(v.gain||0,Y.CGT_AEA))},{l:'You keep',v:fmt((v.gain||0)-tax)}],
+   bars:[{l:'CGT',v:tax,c:C.tax},{l:'Kept',v:Math.max(0,(v.gain||0)-tax),c:C.take}],
+   rows:[{n:'Total gain',v:v.gain||0},{n:'Annual exempt amount',v:-Math.min(v.gain||0,Y.CGT_AEA)},...detail.map(d=>({n:d.n,v:-d.tax})),{n:'CGT payable',v:tax,total:true}],
+   note:'Residential property disposals must be reported within 60 days. BADR (18% from April 2026) has a £1m lifetime limit — timing an exit deserves planning.'
+  };
+ }},
+sdlt:{ico:'i-home',viz:'<svg viewBox="0 0 220 118"><path d="m44 58 36-28 36 28v40a5 5 0 0 1-5 5H49a5 5 0 0 1-5-5z" fill="rgba(65,173,236,.1)" stroke="url(#gB)" stroke-width="2.2" stroke-linejoin="round"/><path d="M70 103V76h20v27" fill="none" stroke="rgba(147,163,188,.6)" stroke-width="2"/><g fill="rgba(65,173,236,.25)"><rect x="138" y="38" width="52" height="9" rx="4.5"/><rect x="138" y="56" width="38" height="9" rx="4.5"/></g><rect x="138" y="74" width="26" height="9" rx="4.5" fill="url(#gB)"/><text x="138" y="30" fill="#93A3BC" font-size="8" class="svg-label">SDLT BANDS</text></svg>',label:'Stamp Duty',title:'Stamp Duty (SDLT) Calculator',sub:'England & NI residential · 2026/27 bands',
+ fields:[
+  {id:'price',label:'Purchase price (£)',type:'num',def:425000},
+  {id:'buyer',label:'Buyer type',type:'select',def:'std',opts:[['std','Home mover (standard)'],['ftb','First-time buyer'],['additional','Additional property (+5%)']]}
+ ],
+ calc(v){
+  const price=v.price||0;
+  const type=v.buyer==='ftb'&&price>500000?'std':v.buyer;
+  const r=sdlt(price,type);
+  return{
+   hero:{label:'Stamp duty payable',value:fmt(r.tax)},
+   minis:[{l:'Effective rate',v:price?(r.tax/price*100).toFixed(2)+'%':'0%'},{l:'Total cost',v:fmt(price+r.tax)}],
+   bars:[{l:'SDLT',v:r.tax,c:C.tax},{l:'Property',v:price,c:C.take}],
+   rows:[...r.detail.map(d=>({n:d.n+' on '+fmt0(d.amt),v:d.tax})),{n:'Total SDLT',v:r.tax,total:true}],
+   note:(v.buyer==='ftb'&&price>500000?'First-time buyer relief is not available above £500,000 — standard rates applied. ':'')+'Scotland (LBTT) and Wales (LTT) use different bands — ask us for a cross-border comparison.'
+  };
+ }}
+};
+
+/* ================================================================
+   TOOL UI RENDERING
+================================================================ */
+let currentTool=null,vals={};
+const rail=document.getElementById('toolRail'),formEl=document.getElementById('calcForm'),outEl=document.getElementById('calcOut');
+const keys=Object.keys(TOOLS);
+keys.forEach(k=>{
+  const t=TOOLS[k];
+  const b=document.createElement('button');
+  b.className='tool-tab';b.dataset.k=k;
+  b.innerHTML='<svg class="ico"><use href="#'+t.ico+'"/></svg><b>'+t.label+'</b>';
+  b.addEventListener('click',()=>{selectTool(k);history.replaceState(null,'','#/tools?tab='+k);});
+  rail.appendChild(b);
+});
+/* home grid */
+const hg=document.getElementById('homeToolGrid');
+keys.forEach((k,i)=>{
+  const t=TOOLS[k];
+  hg.innerHTML+='<a class="card tilt" href="#/tools?tab='+k+'"><span class="kicker">Tool '+(i+1)+' of '+keys.length+'</span><div class="card-viz">'+t.viz+'</div><h3>'+t.label+'</h3><p>'+t.sub+'.</p><span class="go">Open tool</span></a>';
+});
+function selectTool(k){
+  currentTool=k;vals={};
+  const t=TOOLS[k];
+  rail.querySelectorAll('.tool-tab').forEach(b=>b.classList.toggle('active',b.dataset.k===k));
+  t.fields.forEach(f=>vals[f.id]=f.def);
+  let html='<h3>'+t.title+'</h3><p class="calc-sub">'+t.sub+'</p><div id="fwrap"></div>';
+  formEl.innerHTML=html;
+  buildFields();
+  recalc();
+}
+function buildFields(){
+  const t=TOOLS[currentTool],w=formEl.querySelector('#fwrap');
+  w.innerHTML='';
+  t.fields.forEach(f=>{
+    if(f.show&&!f.show(vals))return;
+    if(f.type==='toggle'){
+      const d=document.createElement('div');d.className='toggle-row';
+      d.innerHTML='<span>'+f.label+'</span><button type="button" class="switch'+(vals[f.id]?' on':'')+'" aria-label="'+f.label+'"></button>';
+      d.querySelector('.switch').addEventListener('click',function(){vals[f.id]=!vals[f.id];this.classList.toggle('on');recalc();});
+      w.appendChild(d);
+    }else if(f.type==='select'){
+      const d=document.createElement('div');d.className='f-group';
+      d.innerHTML='<label>'+f.label+'</label><select>'+f.opts.map(o=>'<option value="'+o[0]+'"'+(vals[f.id]===o[0]?' selected':'')+'>'+o[1]+'</option>').join('')+'</select>';
+      d.querySelector('select').addEventListener('change',function(){vals[f.id]=this.value;buildFields();recalc();});
+      w.appendChild(d);
+    }else{
+      const d=document.createElement('div');d.className='f-group';
+      const isNum=f.type==='num';
+      d.innerHTML='<label>'+f.label+'</label><input '+(isNum?'type="number" inputmode="decimal" min="0" step="any"':'type="text"')+' value="'+vals[f.id]+'">';
+      d.querySelector('input').addEventListener('input',function(){vals[f.id]=isNum?parseFloat(this.value)||0:this.value;recalc();});
+      w.appendChild(d);
+    }
+  });
+}
+function recalc(){
+  const t=TOOLS[currentTool],r=t.calc(vals);
+  const barTotal=r.bars.reduce((s,b)=>s+Math.max(0,b.v),0)||1;
+  outEl.innerHTML=
+   '<div class="result-hero"><span>'+r.hero.label+'</span><b>'+r.hero.value+'</b></div>'+
+   '<div class="result-grid">'+r.minis.map(m=>'<div class="result-mini"><span>'+m.l+'</span><b>'+m.v+'</b></div>').join('')+'</div>'+
+   '<div class="bar-viz">'+r.bars.map(b=>'<i style="width:'+(Math.max(0,b.v)/barTotal*100)+'%;background:'+b.c+'"></i>').join('')+'</div>'+
+   '<div class="legend">'+r.bars.filter(b=>b.v>0).map(b=>'<span><i style="background:'+b.c+'"></i>'+b.l+' · '+fmt0(b.v)+'</span>').join('')+'</div>'+
+   '<div class="breakdown">'+r.rows.map(x=>'<div class="row'+(x.total?' total':'')+'"><span>'+x.n+'</span><b>'+(x.v<0?'− ':'')+fmt(Math.abs(x.v))+'</b></div>').join('')+'</div>'+
+   '<p class="disclaimer">'+r.note+' This is an estimate based on standard 2026/27 UK rates and does not constitute tax advice. <a href="#/contact" style="color:var(--blue)">Speak to a partner →</a></p>';
+}
+
+/* boot */
+route();
+addEventListener('load',observeAll);
+</script>
+</body>
+</html>
