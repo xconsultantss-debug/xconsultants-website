@@ -276,8 +276,33 @@ textarea{background:rgba(255,255,255,.05);border:1px solid var(--line);border-ra
 textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15)}
 .form-ok{display:none;background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.4);color:#7CE49A;border-radius:12px;padding:16px;font-size:14px;margin-top:14px}
 
+/* ============ AUTH / PORTAL ============ */
+.tabbtns{display:flex;gap:8px;margin-bottom:24px}
+.tabbtns button{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;font-weight:600;font-size:13.5px;color:var(--muted);transition:.3s;background:rgba(255,255,255,.03)}
+.tabbtns button.on{background:var(--blue-soft);border-color:rgba(65,173,236,.5);color:var(--txt)}
+.auth-msg{display:none;border-radius:12px;padding:13px 16px;font-size:13.5px;margin-top:14px;line-height:1.5}
+.auth-msg.err{display:block;background:rgba(226,92,92,.12);border:1px solid rgba(226,92,92,.4);color:#F2A0A0}
+.auth-msg.ok{display:block;background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.4);color:#7CE49A}
+.portal-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;align-items:start}
+.portal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.doc-row{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;font-size:13.5px}
+.doc-row b{flex:1;font-weight:500;word-break:break-all}
+.doc-row button{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--blue);padding:6px 11px;border-radius:99px;border:1px solid rgba(65,173,236,.35);transition:.3s}
+.doc-row button:hover{background:var(--blue-soft)}
+.doc-row button.danger{color:#F2A0A0;border-color:rgba(226,92,92,.35)}
+.enq{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:rgba(255,255,255,.02)}
+.enq p{color:var(--muted);font-size:13px;line-height:1.6;margin-top:6px}
+.enq .meta{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);font-weight:700}
+.article{cursor:pointer}
+.article .more{max-height:0;overflow:hidden;transition:max-height .7s var(--ease)}
+.article.open .more{max-height:420px}
+.article .more p{margin-top:10px;max-width:640px}
+.article .hint{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--blue);display:inline-block;margin-top:10px}
+.empty-note{color:var(--muted-2);font-size:13px;padding:14px;border:1px dashed var(--line);border-radius:12px;text-align:center}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width:1080px){
+  .portal-grid{grid-template-columns:1fr}
   .g4{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(2,1fr)}
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -350,6 +375,7 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
       <a href="#/tools" data-r="tools">Tools</a>
       <a href="#/about" data-r="about">About</a>
       <a href="#/contact" data-r="contact">Contact</a>
+      <a href="#/login" data-r="login" id="navPortal">Login</a>
     </nav>
     <a href="#/contact" class="btn btn-primary btn-sm cta-nav">Book Consultation</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -362,6 +388,7 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
   <a href="#/tools">Tax <em>Tools</em></a>
   <a href="#/about">About</a>
   <a href="#/contact">Contact</a>
+  <a href="#/login" id="mNavPortal">Login</a>
   <a href="#/contact" style="border:none;color:var(--blue)">Book a Consultation →</a>
 </div>
 
@@ -548,9 +575,9 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
 
     <section style="padding-bottom:0"><div class="sec-head center rv"><span class="eyebrow">Transparent Pricing</span><h2 class="title">Plans that <em>scale with you.</em></h2><p class="lead">Fixed monthly fees, no surprises. Every engagement begins with a complimentary scoping call.</p></div>
     <div class="grid g3 rv" data-stagger>
-      <div class="card"><span class="kicker">Sole Trader</span><h3>Essential</h3><p>Self assessment, bookkeeping-lite, unlimited email support and HMRC correspondence handled.</p><span class="go" style="color:var(--blue)">Request a quote</span></div>
-      <div class="card" style="border-color:rgba(65,173,236,.5);background:linear-gradient(160deg,rgba(65,173,236,.1),rgba(11,114,231,.04))"><span class="kicker">Limited Company</span><h3>Professional</h3><p>Year-end accounts, CT600, payroll for directors, VAT filings, self assessment and quarterly check-ins.</p><span class="go" style="color:var(--blue)">Request a quote</span></div>
-      <div class="card"><span class="kicker">Scale &amp; Groups</span><h3>Enterprise</h3><p>Multi-entity consolidation, management reporting, CFO-level advisory and dedicated partner access.</p><span class="go" style="color:var(--blue)">Request a quote</span></div>
+      <a class="card" href="#/contact"><span class="kicker">Sole Trader</span><h3>Essential</h3><p>Self assessment, bookkeeping-lite, unlimited email support and HMRC correspondence handled.</p><span class="go" style="color:var(--blue)">Request a quote</span></a>
+      <a class="card" href="#/contact" style="border-color:rgba(65,173,236,.5);background:linear-gradient(160deg,rgba(65,173,236,.1),rgba(11,114,231,.04))"><span class="kicker">Limited Company</span><h3>Professional</h3><p>Year-end accounts, CT600, payroll for directors, VAT filings, self assessment and quarterly check-ins.</p><span class="go" style="color:var(--blue)">Request a quote</span></a>
+      <a class="card" href="#/contact"><span class="kicker">Scale &amp; Groups</span><h3>Enterprise</h3><p>Multi-entity consolidation, management reporting, CFO-level advisory and dedicated partner access.</p><span class="go" style="color:var(--blue)">Request a quote</span></a>
     </div>
     <div style="text-align:center;margin-top:36px" class="rv"><a class="btn btn-primary" href="#/contact">Get Your Tailored Fee — Free Scoping Call</a></div>
     </section>
@@ -582,11 +609,11 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
   </div>
   <div class="wrap">
     <div class="rv" data-stagger id="articleList">
-      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pie"/></svg></span><span class="date">Jun 2026</span><div><h3>Dividend tax just rose to 10.75% — your extraction model needs a rethink</h3><p>The 2026/27 basic and higher dividend rates climbed two points. We model the new optimal salary/dividend blend for single-director companies.</p></div><span class="tag">Director's Brief</span></a>
-      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-clipboard"/></svg></span><span class="date">May 2026</span><div><h3>MTD for Income Tax: the April 2026 go-live, one month in</h3><p>Quarterly digital reporting is now live for sole traders and landlords over £50k. What the first filing cycle taught our clients.</p></div><span class="tag">Compliance</span></a>
-      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-trend"/></svg></span><span class="date">Apr 2026</span><div><h3>BADR at 18%: exit timing after the April rise</h3><p>Business Asset Disposal Relief has stepped up again. We quantify the impact on sale proceeds and the case for planning ahead.</p></div><span class="tag">Exit Planning</span></a>
-      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pin"/></svg></span><span class="date">Mar 2026</span><div><h3>Scotland's new 48% top rate — cross-border planning notes</h3><p>The 2026/27 Scottish Budget added pressure at the top. Residence, relocation and pension levers examined.</p></div><span class="tag">Personal Tax</span></a>
-      <a class="article" href="#/contact"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-building"/></svg></span><span class="date">Feb 2026</span><div><h3>Marginal relief: the 26.5% trap between £50k and £250k</h3><p>Most directors don't realise profits in the marginal band suffer an effective 26.5%. Three legitimate mitigation routes.</p></div><span class="tag">Corporation Tax</span></a>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pie"/></svg></span><span class="date">Jun 2026</span><div><h3>Dividend tax just rose to 10.75% — your extraction model needs a rethink</h3><p>The 2026/27 basic and higher dividend rates climbed two points. We model the new optimal salary/dividend blend for single-director companies.</p><div class="more"><p>From 6 April 2026 the basic dividend rate is 10.75% and the higher rate 35.75%, while the £500 allowance stays frozen. For a director taking £40,000 in dividends above a £12,570 salary, that is roughly £800 more tax than last year.</p><p>The optimal blend now leans harder on pension contributions and, for some, retaining profit at corporate rates. Model your own position with our <a href='#/tools?tab=dividend' style='color:var(--blue)' onclick='event.stopPropagation()'>Dividend Tax calculator</a>, or ask us to re-run your extraction plan.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Director's Brief</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-clipboard"/></svg></span><span class="date">May 2026</span><div><h3>MTD for Income Tax: the April 2026 go-live, one month in</h3><p>Quarterly digital reporting is now live for sole traders and landlords over £50k. What the first filing cycle taught our clients.</p><div class="more"><p>Sole traders and landlords with qualifying income over £50,000 must now keep digital records and file quarterly updates. The first cumulative submissions are due 7 August 2026 — and HMRC's penalty points regime applies.</p><p>Our cloud bookkeeping clients were compliant from day one. If you are still on spreadsheets, the catch-up window before your first deadline is short — <a href='#/contact' style='color:var(--blue)' onclick='event.stopPropagation()'>talk to us</a> about a fast migration.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Compliance</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-trend"/></svg></span><span class="date">Apr 2026</span><div><h3>BADR at 18%: exit timing after the April rise</h3><p>Business Asset Disposal Relief has stepped up again. We quantify the impact on sale proceeds and the case for planning ahead.</p><div class="more"><p>Business Asset Disposal Relief climbed from 14% to 18% on 6 April 2026 — the second step of the announced rises. On a £1m qualifying gain, that is £40,000 more tax than a disposal completed in 2025/26.</p><p>The £1m lifetime limit remains. If a sale is on your horizon, structuring and timing reviews matter more than ever — estimate the liability with our <a href='#/tools?tab=cgt' style='color:var(--blue)' onclick='event.stopPropagation()'>Capital Gains calculator</a>.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Exit Planning</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-pin"/></svg></span><span class="date">Mar 2026</span><div><h3>Scotland's new 48% top rate — cross-border planning notes</h3><p>The 2026/27 Scottish Budget added pressure at the top. Residence, relocation and pension levers examined.</p><div class="more"><p>The 2026/27 Scottish Budget pushed the top rate to 48% above £125,140, with six bands now in play. A £160,000 earner in Scotland pays materially more than in the rest of the UK.</p><p>Residence is determined by where you live, not where you work — but pensions, dividend income (UK-wide rates) and incorporation all change the calculus. Compare both regimes in our <a href='#/tools?tab=salary' style='color:var(--blue)' onclick='event.stopPropagation()'>Salary calculator</a> with the Scottish toggle.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Personal Tax</span></div>
+      <div class="article"><span class="thumb"><svg class="ico" style="width:28px;height:28px"><use href="#i-building"/></svg></span><span class="date">Feb 2026</span><div><h3>Marginal relief: the 26.5% trap between £50k and £250k</h3><p>Most directors don't realise profits in the marginal band suffer an effective 26.5%. Three legitimate mitigation routes.</p><div class="more"><p>Corporation tax looks like 19% or 25%, but every pound of profit between £50,000 and £250,000 effectively suffers 26.5% — higher than the main rate itself.</p><p>Pension contributions, capital allowances and timing of income can pull profits out of the marginal band. See your effective rate in our <a href='#/tools?tab=corp' style='color:var(--blue)' onclick='event.stopPropagation()'>Corporation Tax calculator</a>, then ask us about mitigation.</p></div><span class="hint">Read the brief ↓</span></div><span class="tag">Corporation Tax</span></div>
     </div>
 
     <section style="padding-bottom:0"><div class="cta-banner rv-scale">
@@ -669,6 +696,80 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
     </div>
   </div>
 </section>
+
+<!-- ================= LOGIN ================= -->
+<section class="page" data-page="login">
+  <div class="page-hero wrap">
+    <span class="eyebrow">Client Portal</span>
+    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">Welcome <em>back.</em></h1>
+    <p class="lead">Secure access to your documents, enquiries and engagement details.</p>
+  </div>
+  <div class="wrap" style="max-width:560px">
+    <div class="calc-panel rv vis">
+      <div class="tabbtns">
+        <button type="button" id="tabSignin" class="on">Sign in</button>
+        <button type="button" id="tabSignup">Create account</button>
+      </div>
+      <form id="authForm">
+        <div class="f-group" id="nameGroup" style="display:none"><label>Full name</label><input id="authName" placeholder="Jane Smith" autocomplete="name"></div>
+        <div class="f-group"><label>Email</label><input id="authEmail" type="email" required placeholder="jane@company.co.uk" autocomplete="email"></div>
+        <div class="f-group"><label>Password</label><input id="authPass" type="password" required minlength="8" placeholder="Minimum 8 characters" autocomplete="current-password"></div>
+        <button class="btn btn-primary" type="submit" id="authBtn" style="width:100%;justify-content:center">Sign in</button>
+        <div class="auth-msg" id="authMsg"></div>
+      </form>
+      <p class="disclaimer" style="text-align:center">Your data is encrypted and only visible to you and X&nbsp;Consultants. New here? Create an account in seconds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTAL ================= -->
+<section class="page" data-page="portal">
+  <div class="page-hero wrap" style="padding-bottom:30px">
+    <span class="eyebrow">Client Portal</span>
+    <h1 class="display" style="font-size:clamp(38px,6vw,72px)">Your <em>dashboard.</em></h1>
+  </div>
+  <div class="wrap">
+    <div class="portal-head">
+      <p class="lead" id="portalHello">Signed in.</p>
+      <button class="btn btn-ghost btn-sm" id="signOutBtn">Sign out</button>
+    </div>
+    <div class="portal-grid">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div class="calc-panel">
+          <h3>Your profile</h3>
+          <p class="calc-sub">Kept private to your engagement</p>
+          <div class="f-group"><label>Full name</label><input id="pfName" placeholder="Jane Smith"></div>
+          <div class="f-group"><label>Company (optional)</label><input id="pfCompany" placeholder="Company Ltd"></div>
+          <div class="f-group"><label>Phone (optional)</label><input id="pfPhone" placeholder="07···"></div>
+          <button class="btn btn-primary btn-sm" id="pfSave">Save profile</button>
+          <div class="auth-msg" id="pfMsg"></div>
+        </div>
+        <div class="calc-panel">
+          <h3>New enquiry</h3>
+          <p class="calc-sub">Goes straight to a senior partner</p>
+          <div class="f-group"><label>Message</label><textarea id="enqMsg" placeholder="How can we help?"></textarea></div>
+          <button class="btn btn-primary btn-sm" id="enqSend">Send enquiry</button>
+          <div class="auth-msg" id="enqNote"></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div class="calc-panel">
+          <h3>Document vault</h3>
+          <p class="calc-sub">Receipts · P60s · invoices — encrypted &amp; private</p>
+          <input type="file" id="docFile" style="display:none">
+          <button class="btn btn-ghost btn-sm" id="docUploadBtn" style="margin-bottom:16px">⬆ Upload a document</button>
+          <span id="docBusy" style="display:none;color:var(--muted);font-size:12.5px;margin-left:10px">Uploading…</span>
+          <div id="docList"></div>
+        </div>
+        <div class="calc-panel">
+          <h3>Your enquiries</h3>
+          <p class="calc-sub">Everything you have sent us</p>
+          <div id="enqList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -678,7 +779,7 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
         <a class="brand" href="#/"><span class="brand-x">X</span><span><span class="brand-name">X CONSULTANTS</span><span class="brand-tag">CLARITY IN NUMBERS</span></span></a>
         <p>ACCA Qualified Tax &amp; Business Consultants based in Reading, UK. Expert accountancy, VAT and business advisory for the modern enterprise.</p>
       </div>
-      <div><h5>Practice</h5><a href="#/services">Services</a><a href="#/about">About</a><a href="#/knowledge">Knowledge Hub</a><a href="#/contact">Contact</a></div>
+      <div><h5>Practice</h5><a href="#/services">Services</a><a href="#/about">About</a><a href="#/knowledge">Knowledge Hub</a><a href="#/contact">Contact</a><a href="#/login" id="fNavPortal">Client Portal</a></div>
       <div><h5>Tools</h5><a href="#/tools?tab=salary">Salary &amp; Income</a><a href="#/tools?tab=vat">VAT Calculator</a><a href="#/tools?tab=corp">Corporation Tax</a><a href="#/tools?tab=dividend">Dividend Tax</a><a href="#/tools?tab=taxi">Taxi Specialist</a></div>
       <div><h5>Get in touch</h5><a href="mailto:support@xconsultants.co.uk">support@xconsultants.co.uk</a><a href="#/contact">Book Consultation</a><a href="#/knowledge">Director's Circular</a></div>
     </div>
@@ -689,15 +790,17 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* ================= ROUTER ================= */
+document.querySelectorAll('.article').forEach(a=>a.addEventListener('click',()=>a.classList.toggle('open')));
 const pages=document.querySelectorAll('.page');
 const navLinks=document.querySelectorAll('nav.primary a');
 function route(){
   let h=location.hash||'#/';
   let [path,query]=h.replace(/^#\//,'').split('?');
   path=path||'home';
-  const known=['home','services','tools','knowledge','about','contact'];
+  const known=['home','services','tools','knowledge','about','contact','login','portal'];
   if(!known.includes(path))path='home';
   pages.forEach(p=>p.classList.toggle('active',p.dataset.page===path));
   navLinks.forEach(a=>a.classList.toggle('active',a.dataset.r===path));
@@ -709,6 +812,11 @@ function route(){
     const t=params.get('tab');
     if(t&&TOOLS[t])selectTool(t);else if(!currentTool)selectTool('salary');
   }
+  if(path==='portal'){
+    if(!sbSession){location.hash='#/login';return;}
+    loadPortal();
+  }
+  if(path==='login'&&sbSession){location.hash='#/portal';return;}
   requestAnimationFrame(observeAll);
 }
 window.addEventListener('hashchange',route);
@@ -1190,6 +1298,127 @@ function recalc(){
    '<div class="legend">'+r.bars.filter(b=>b.v>0).map(b=>'<span><i style="background:'+b.c+'"></i>'+b.l+' · '+fmt0(b.v)+'</span>').join('')+'</div>'+
    '<div class="breakdown">'+r.rows.map(x=>'<div class="row'+(x.total?' total':'')+'"><span>'+x.n+'</span><b>'+(x.v<0?'− ':'')+fmt(Math.abs(x.v))+'</b></div>').join('')+'</div>'+
    '<p class="disclaimer">'+r.note+' This is an estimate based on standard 2026/27 UK rates and does not constitute tax advice. <a href="#/contact" style="color:var(--blue)">Speak to a partner →</a></p>';
+}
+
+/* ================= SUPABASE AUTH + PORTAL ================= */
+const sb=window.supabase?window.supabase.createClient(SUPA_URL,SUPA_KEY):null;
+let sbSession=null;
+function setPortalNav(){
+  const label=sbSession?'Portal':'Login';
+  const np=document.getElementById('navPortal'),mp=document.getElementById('mNavPortal');
+  if(np)np.textContent=label;
+  if(mp)mp.textContent=sbSession?'Client Portal':'Login';
+}
+function authMsg(id,text,ok){const m=document.getElementById(id);m.className='auth-msg '+(ok?'ok':'err');m.textContent=text;}
+if(sb){
+  sb.auth.getSession().then(({data})=>{sbSession=data.session;setPortalNav();route();});
+  sb.auth.onAuthStateChange((_e,session)=>{
+    const had=!!sbSession;sbSession=session;setPortalNav();
+    if(session&&location.hash.startsWith('#/login'))location.hash='#/portal';
+    if(!session&&had&&location.hash.startsWith('#/portal'))location.hash='#/login';
+  });
+}
+/* login page */
+let authMode='signin';
+const tabSignin=document.getElementById('tabSignin'),tabSignup=document.getElementById('tabSignup');
+function setAuthMode(m){
+  authMode=m;
+  tabSignin.classList.toggle('on',m==='signin');
+  tabSignup.classList.toggle('on',m==='signup');
+  document.getElementById('nameGroup').style.display=m==='signup'?'':'none';
+  document.getElementById('authBtn').textContent=m==='signup'?'Create account':'Sign in';
+  document.getElementById('authMsg').className='auth-msg';
+}
+tabSignin.addEventListener('click',()=>setAuthMode('signin'));
+tabSignup.addEventListener('click',()=>setAuthMode('signup'));
+document.getElementById('authForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!sb){authMsg('authMsg','Portal unavailable — please email support@xconsultants.co.uk');return;}
+  const email=document.getElementById('authEmail').value.trim();
+  const pass=document.getElementById('authPass').value;
+  const btn=document.getElementById('authBtn');btn.disabled=true;btn.style.opacity=.6;
+  try{
+    if(authMode==='signup'){
+      const name=document.getElementById('authName').value.trim();
+      const {error}=await sb.auth.signUp({email,password:pass,options:{data:{full_name:name}}});
+      if(error)throw error;
+      const {data:sess}=await sb.auth.getSession();
+      if(sess.session){
+        await sb.from('profiles').upsert({id:sess.session.user.id,full_name:name});
+        authMsg('authMsg','Account created — taking you to your portal…',true);
+      }else{
+        authMsg('authMsg','Account created. Please check your email to confirm, then sign in.',true);
+      }
+    }else{
+      const {error}=await sb.auth.signInWithPassword({email,password:pass});
+      if(error)throw error;
+      authMsg('authMsg','Signed in — loading your portal…',true);
+    }
+  }catch(err){authMsg('authMsg',err.message||'Something went wrong — please try again.');}
+  btn.disabled=false;btn.style.opacity=1;
+});
+/* portal */
+async function loadPortal(){
+  if(!sb||!sbSession)return;
+  const u=sbSession.user;
+  document.getElementById('portalHello').textContent='Welcome back'+(u.user_metadata&&u.user_metadata.full_name?', '+u.user_metadata.full_name.split(' ')[0]:'')+' — '+u.email;
+  const {data:prof}=await sb.from('profiles').select('*').eq('id',u.id).maybeSingle();
+  if(prof){
+    document.getElementById('pfName').value=prof.full_name||'';
+    document.getElementById('pfCompany').value=prof.company||'';
+    document.getElementById('pfPhone').value=prof.phone||'';
+  }
+  loadEnquiries();loadDocs();
+}
+document.getElementById('signOutBtn').addEventListener('click',async()=>{await sb.auth.signOut();location.hash='#/';});
+document.getElementById('pfSave').addEventListener('click',async()=>{
+  const {error}=await sb.from('profiles').upsert({id:sbSession.user.id,full_name:document.getElementById('pfName').value.trim(),company:document.getElementById('pfCompany').value.trim(),phone:document.getElementById('pfPhone').value.trim(),updated_at:new Date().toISOString()});
+  authMsg('pfMsg',error?error.message:'Profile saved.',!error);
+});
+document.getElementById('enqSend').addEventListener('click',async()=>{
+  const msg=document.getElementById('enqMsg').value.trim();
+  if(!msg){authMsg('enqNote','Please write a message first.');return;}
+  const u=sbSession.user;
+  const {error}=await sb.from('contact_messages').insert({user_id:u.id,name:(u.user_metadata&&u.user_metadata.full_name)||u.email,email:u.email,message:msg,client_type:'Portal enquiry'});
+  authMsg('enqNote',error?error.message:'Sent — a senior partner will reply within one working day.',!error);
+  if(!error){document.getElementById('enqMsg').value='';loadEnquiries();}
+});
+async function loadEnquiries(){
+  const box=document.getElementById('enqList');
+  const {data,error}=await sb.from('contact_messages').select('message,created_at').eq('user_id',sbSession.user.id).order('created_at',{ascending:false}).limit(20);
+  if(error||!data||!data.length){box.innerHTML='<div class="empty-note">No enquiries yet — send your first one on the left.</div>';return;}
+  box.innerHTML=data.map(r=>'<div class="enq"><span class="meta">'+new Date(r.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})+'</span><p>'+String(r.message).replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))+'</p></div>').join('');
+}
+/* documents */
+const docInput=document.getElementById('docFile');
+document.getElementById('docUploadBtn').addEventListener('click',()=>docInput.click());
+docInput.addEventListener('change',async()=>{
+  const f=docInput.files[0];if(!f)return;
+  if(f.size>10*1024*1024){alert('Maximum file size is 10 MB.');return;}
+  document.getElementById('docBusy').style.display='inline';
+  const path=sbSession.user.id+'/'+Date.now()+'_'+f.name.replace(/[^\w.\-]/g,'_');
+  const {error}=await sb.storage.from('client-documents').upload(path,f);
+  document.getElementById('docBusy').style.display='none';
+  docInput.value='';
+  if(error)alert('Upload failed: '+error.message);else loadDocs();
+});
+async function loadDocs(){
+  const box=document.getElementById('docList');
+  const {data,error}=await sb.storage.from('client-documents').list(sbSession.user.id,{sortBy:{column:'created_at',order:'desc'}});
+  if(error||!data||!data.length){box.innerHTML='<div class="empty-note">Your vault is empty — upload your first document above.</div>';return;}
+  box.innerHTML=data.map(f=>{
+    const nice=f.name.replace(/^\d+_/,'');
+    return '<div class="doc-row"><b>'+nice+'</b><button data-dl="'+f.name+'">Download</button><button class="danger" data-del="'+f.name+'">Delete</button></div>';
+  }).join('');
+  box.querySelectorAll('[data-dl]').forEach(b=>b.addEventListener('click',async()=>{
+    const {data:s}=await sb.storage.from('client-documents').createSignedUrl(sbSession.user.id+'/'+b.dataset.dl,120);
+    if(s&&s.signedUrl)window.open(s.signedUrl,'_blank');
+  }));
+  box.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',async()=>{
+    if(!confirm('Delete this document permanently?'))return;
+    await sb.storage.from('client-documents').remove([sbSession.user.id+'/'+b.dataset.del]);
+    loadDocs();
+  }));
 }
 
 /* boot */
