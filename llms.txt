@@ -1,10 +1,10 @@
 # X Consultants
 
-> X Consultants is an ACCA-qualified UK tax and business consultancy founded in 2026, based in Reading, Berkshire. We provide accountancy, VAT, corporation tax, self assessment, bookkeeping, payroll and company-formation services to small businesses, sole traders, landlords, contractors and taxi/private-hire drivers across the Thames Valley and the wider UK. The website also offers free, accurate 2026/27 UK tax calculators.
+> X Consultants is a UK tax and business consultancy founded in 2026, based in Reading, Berkshire. We provide accountancy, VAT, corporation tax, self assessment, bookkeeping, payroll and company-formation services to small businesses, sole traders, landlords, contractors and taxi/private-hire drivers across the Thames Valley and the wider UK. The website also offers free, accurate 2026/27 UK tax calculators.
 
 Key facts:
 - Name: X Consultants ("Clarity in Numbers. Confidence in Growth.")
-- Type: ACCA-qualified tax & business consultancy (accounting service)
+- Type: Tax & business consultancy (accounting service)
 - Founded: 2026
 - Location: Reading, Berkshire, United Kingdom
 - Serves: Reading, Wokingham, Maidenhead, Bracknell, Slough, Henley-on-Thames, the Thames Valley, and remotely across the UK
