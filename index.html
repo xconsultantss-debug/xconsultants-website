@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>/* set theme before first paint: saved choice, else match the visitor's device */
+(function(){try{var s=localStorage.getItem('xc-theme');var t=s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <title>Accountants in Reading | Tax &amp; Business Consultants | X Consultants</title>
 <meta name="description" content="Tax and business consultants in Reading, Berkshire. Expert tax, VAT, corporation tax, self assessment, bookkeeping &amp; payroll for SMEs, sole traders, landlords, contractors &amp; taxi drivers across the Thames Valley. Free 2026/27 UK tax calculators.">
 <meta property="og:title" content="X Consultants — Clarity in Numbers. Confidence in Growth.">
@@ -566,6 +568,87 @@ select option:checked,select option:hover{background:#123056;color:#fff}
   .hero-cta .btn{width:100%;justify-content:center}
   h1.display{font-size:clamp(34px,10.5vw,56px)}
 }
+
+/* ===================== THEME TOGGLE + LIGHT THEME ===================== */
+.theme-tgl{width:40px;height:40px;border-radius:12px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--txt);background:var(--glass);flex-shrink:0;margin-left:6px;transition:background .3s,transform .3s,border-color .3s}
+.theme-tgl:hover{background:var(--glass-2);transform:translateY(-1px);border-color:var(--blue)}
+.theme-tgl svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.theme-tgl .ico-moon{display:none}
+:root[data-theme="light"] .theme-tgl .ico-sun{display:none}
+:root[data-theme="light"] .theme-tgl .ico-moon{display:block}
+
+:root[data-theme="light"]{
+  --ink:#EEF3FA; --ink-2:#FFFFFF; --ink-3:#F0F5FC;
+  --glass:rgba(13,32,64,.035); --glass-2:rgba(13,32,64,.07);
+  --line:rgba(13,32,64,.11); --line-2:rgba(13,32,64,.18);
+  --txt:#0E1B31; --muted:#48597A; --muted-2:#6C7D98;
+  --blue:#0B6FE0; --blue-2:#0A57B8; --blue-soft:rgba(11,111,224,.10);
+}
+:root[data-theme="light"] body{background:#EEF3FA;color:var(--txt)}
+:root[data-theme="light"] .bg-dots{background:
+  radial-gradient(1200px 800px at 80% -10%,rgba(11,114,231,.12),transparent 60%),
+  radial-gradient(900px 700px at -10% 110%,rgba(65,173,236,.12),transparent 60%),#EEF3FA;}
+:root[data-theme="light"] .bg-dots::after{background-image:radial-gradient(rgba(13,32,64,.07) 1px,transparent 1.4px);}
+:root[data-theme="light"] body::before{background:
+  radial-gradient(58% 44% at 10% -2%, rgba(11,114,231,.12), transparent 60%),
+  radial-gradient(52% 42% at 102% 8%, rgba(65,173,236,.11), transparent 60%),
+  radial-gradient(58% 48% at 50% 110%, rgba(11,114,231,.08), transparent 62%);}
+:root[data-theme="light"] #hero3d{opacity:.30}
+
+/* frosted white cards on light */
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .calc-panel,
+:root[data-theme="light"] #keyfacts,
+:root[data-theme="light"] .faq-item,
+:root[data-theme="light"] .result-mini,
+:root[data-theme="light"] .tile,
+:root[data-theme="light"] .recon .rc-tile,
+:root[data-theme="light"] .recon .rc-drop,
+:root[data-theme="light"] .recon .rc-tag,
+:root[data-theme="light"] .recon .rc-tw{
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);backdrop-filter:blur(20px) saturate(150%);
+  border:1px solid rgba(13,32,64,.09);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 18px 44px -26px rgba(13,32,64,.28);
+}
+:root[data-theme="light"] .card:hover{background:rgba(255,255,255,.93);border-color:rgba(13,32,64,.15)}
+:root[data-theme="light"] .stat{background:rgba(255,255,255,.62)}
+:root[data-theme="light"] .stat:hover{background:rgba(255,255,255,.92)}
+:root[data-theme="light"] .stats{background:rgba(13,32,64,.10)}
+:root[data-theme="light"] .cta-banner{background:linear-gradient(150deg,rgba(255,255,255,.9),rgba(11,111,224,.08));border:1px solid rgba(13,32,64,.10);box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 34px 70px -40px rgba(13,32,64,.32)}
+:root[data-theme="light"] .marquee{background:rgba(13,32,64,.025);border-color:var(--line)}
+
+/* header + mobile menu on light */
+:root[data-theme="light"] header.scrolled{background:rgba(255,255,255,.8);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);box-shadow:0 1px 0 rgba(13,32,64,.08)}
+:root[data-theme="light"] .mobile-menu{background:rgba(238,243,250,.97)}
+
+/* inputs / selects / toggles on light */
+:root[data-theme="light"] .f-group input,
+:root[data-theme="light"] .f-group select,
+:root[data-theme="light"] textarea,
+:root[data-theme="light"] .recon select,
+:root[data-theme="light"] .recon input[type=number],
+:root[data-theme="light"] .recon input[type=text]{
+  background:rgba(255,255,255,.92);border:1px solid rgba(13,32,64,.16);color:var(--txt)}
+:root[data-theme="light"] .f-group select option,
+:root[data-theme="light"] .recon select option,
+:root[data-theme="light"] select option{background:#FFFFFF;color:#0E1B31}
+:root[data-theme="light"] select option:checked{background:#DCEAFB;color:#0A57B8}
+:root[data-theme="light"] .toggle-row{background:rgba(255,255,255,.62)}
+:root[data-theme="light"] .switch{background:rgba(13,32,64,.20)}
+
+/* result hero + surfaces that used white translucency */
+:root[data-theme="light"] .result-hero{background:linear-gradient(150deg,rgba(11,111,224,.13),rgba(65,173,236,.08));border:1px solid rgba(11,111,224,.28)}
+:root[data-theme="light"] .breakdown .row.total{background:rgba(11,111,224,.08)}
+:root[data-theme="light"] .tool-tab,
+:root[data-theme="light"] .btn-ghost,
+:root[data-theme="light"] .ci,
+:root[data-theme="light"] .enq,
+:root[data-theme="light"] .doc-row,
+:root[data-theme="light"] .tabbtns button{background:rgba(255,255,255,.68);border-color:rgba(13,32,64,.10)}
+:root[data-theme="light"] .tool-tab.active{background:linear-gradient(150deg,rgba(11,111,224,.16),rgba(65,173,236,.10));border-color:rgba(11,111,224,.45)}
+:root[data-theme="light"] footer{background:rgba(13,32,64,.02)}
+:root[data-theme="light"] .eyebrow{background:rgba(11,111,224,.10);border-color:rgba(11,111,224,.28)}
 </style>
 </head>
 <body>
@@ -610,6 +693,10 @@ select option:checked,select option:hover{background:#123056;color:#fff}
       <a href="/contact" data-r="contact">Contact</a>
       <a href="/login" data-r="login" id="navPortal">Login</a>
     </nav>
+    <button class="theme-tgl" id="themeTgl" aria-label="Toggle light or dark theme" title="Switch theme">
+      <svg class="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+    </button>
     <a href="/contact" class="btn btn-primary btn-sm cta-nav">Book Consultation</a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -1930,6 +2017,23 @@ async function loadDocs(){
   el('rcRun').onclick=()=>{const okA=S.map.A.amount||S.map.A.debit||S.map.A.credit,okB=S.map.B.amount||S.map.B.debit||S.map.B.credit;if(!okA||!okB){el('rcWarn').innerHTML='<div class="rc-warn">Please map an Amount column (or a Debit/Credit pair) for both sources.</div>';return;}el('rcWarn').innerHTML='';reconcile();};
   el('rcReset').onclick=()=>{clr('A');clr('B');el('rcResults').classList.add('rc-hide');};
   el('rcExport').onclick=()=>{const R=S.result;if(!R)return;const rows=[['status',cur.a+' date',cur.a+' desc',cur.a+' amount',cur.b+' date',cur.b+' desc',cur.b+' amount']];R.matched.forEach(p=>rows.push([p.type==='exact'?'matched-exact':'matched',dISO(p.a.date),p.a.desc,p.a.amt,dISO(p.b.date),p.b.desc,p.b.amt]));R.suggested.forEach(p=>rows.push(['suggested',dISO(p.a.date),p.a.desc,p.a.amt,dISO(p.b.date),p.b.desc,p.b.amt]));R.unA.forEach(x=>rows.push(['unmatched-'+cur.a,dISO(x.date),x.desc,x.amt,'','','']));R.unB.forEach(x=>rows.push(['unmatched-'+cur.b,'','','',dISO(x.date),x.desc,x.amt]));const csv=rows.map(r=>r.map(c=>'"'+String(c==null?'':c).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='reconciliation.csv';a.click();};
+})();
+
+/* theme toggle (initial theme is set by the inline <head> script to avoid a flash) */
+(function(){
+  var root=document.documentElement;
+  var b=document.getElementById('themeTgl');
+  if(b) b.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('xc-theme',next);}catch(e){}
+  });
+  /* follow the device setting live, but only until the visitor makes their own choice */
+  try{
+    var mq=window.matchMedia('(prefers-color-scheme: light)');
+    var onChange=function(e){ if(!localStorage.getItem('xc-theme')) root.setAttribute('data-theme', e.matches?'light':'dark'); };
+    mq.addEventListener? mq.addEventListener('change',onChange) : mq.addListener(onChange);
+  }catch(e){}
 })();
 
 /* boot */
