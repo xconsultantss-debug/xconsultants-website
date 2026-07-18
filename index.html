@@ -447,6 +447,52 @@ textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(65,173,236,.15
 .recon .rc-warn{background:rgba(226,92,92,.1);border:1px solid rgba(226,92,92,.3);color:#f3b4b4;padding:10px 13px;border-radius:10px;font-size:13px;margin-top:10px}
 .recon .rc-warn.ok{background:rgba(62,207,142,.1);border-color:rgba(62,207,142,.3);color:#bfe9d3}
 .recon .rc-empty{color:var(--muted);font-size:12.5px;padding:12px;text-align:center}
+/* ===================== APPLE-STYLE FROSTED GLASS ===================== */
+/* soft ambient light behind everything, so the more-transparent glass has colour to refract */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(58% 44% at 10% -2%, rgba(65,173,236,.22), transparent 60%),
+    radial-gradient(52% 42% at 102% 8%, rgba(11,114,231,.20), transparent 60%),
+    radial-gradient(58% 48% at 50% 110%, rgba(65,173,236,.15), transparent 62%);}
+
+/* frosted panels & cards — stronger blur, more see-through */
+.card,.calc-panel,#keyfacts,.faq-item,.result-mini,.tile,
+.recon .rc-tile,.recon .rc-drop,.recon .rc-tag,.recon .rc-tw{
+  background:rgba(255,255,255,.04);
+  -webkit-backdrop-filter:blur(26px) saturate(185%);
+  backdrop-filter:blur(26px) saturate(185%);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.20), 0 18px 44px -22px rgba(0,0,0,.6);
+}
+.card:hover{border-color:rgba(255,255,255,.26);background:rgba(255,255,255,.06)}
+
+/* stat cells — very translucent so the ambient glow shows through the hairline grid */
+.stat{background:rgba(255,255,255,.032);-webkit-backdrop-filter:blur(26px) saturate(185%);backdrop-filter:blur(26px) saturate(185%)}
+.stat:hover{background:rgba(255,255,255,.085)}
+
+/* glassy banners */
+.cta-banner{background:linear-gradient(150deg,rgba(255,255,255,.06),rgba(65,173,236,.05));
+  -webkit-backdrop-filter:blur(30px) saturate(190%);backdrop-filter:blur(30px) saturate(190%);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 34px 70px -34px rgba(0,0,0,.6)}
+.result-hero{-webkit-backdrop-filter:blur(26px) saturate(185%);backdrop-filter:blur(26px) saturate(185%)}
+.marquee{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+
+/* inputs & selects: a touch glassier, and fix the reconciliation dropdowns to the dark theme */
+.f-group input,.f-group select,.recon select,.recon input[type=number],.recon input[type=text]{
+  background:rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.14);color:var(--txt)}
+.recon select,.recon input[type=number]{border-radius:10px;padding:11px 13px}
+.recon select option{background:#0E1A2F;color:var(--txt)}
+.f-group input:focus,.f-group select:focus,.recon select:focus,.recon input:focus{
+  border-color:var(--blue);box-shadow:0 0 0 3px rgba(65,173,236,.20)}
+
+/* subtle depth on ghost buttons */
+.btn-ghost{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+
+/* gentle-on-motion: respect reduced-motion / low-power */
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
 </style>
 </head>
 <body>
