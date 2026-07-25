@@ -838,6 +838,15 @@ select option:checked,select option:hover{background:#123056;color:#fff}
   </div></section>
 
   <section style="padding-top:20px"><div class="wrap">
+    <div class="cta-banner rv">
+      <span class="eyebrow" style="position:relative">New · Free Tool</span>
+      <h2 class="title" style="margin-top:16px">Reconcile two files <em>in seconds.</em></h2>
+      <p class="lead">Bank vs cashbook, ledger vs sub-ledger, intercompany or VAT — upload two Excel/CSV files and our reconciliation tool auto-matches every transaction, flags the differences and exports the result. Everything runs in your browser; your data never leaves your device.</p>
+      <div style="margin-top:26px;position:relative"><a href="/tools#reconcile" class="btn btn-primary">Try the Reconciliation Tool →</a></div>
+    </div>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Enterprise</span>
       <h2 class="title">Accountancy <em>Services.</em></h2>
@@ -1022,7 +1031,7 @@ select option:checked,select option:hover{background:#123056;color:#fff}
   <div class="page-hero wrap">
     <span class="eyebrow">Precision Instruments · 2026/27</span>
     <h1 class="display" style="font-size:clamp(42px,7vw,92px)">The Tax <em>Toolkit.</em></h1>
-    <p class="lead">Eight interactive modelling instruments, updated for the 2026/27 UK tax year — including the new dividend rates and Scottish bands.</p>
+    <p class="lead">Eight interactive modelling instruments, updated for the 2026/27 UK tax year — plus a free <a href="/tools#reconcile" style="color:var(--blue)">bank &amp; ledger reconciliation tool</a>. Everything runs instantly in your browser.</p>
   </div>
   <div class="wrap">
     <div class="tool-rail rv" id="toolRail"></div>
@@ -1030,6 +1039,68 @@ select option:checked,select option:hover{background:#123056;color:#fff}
       <div class="calc-panel rv-l" id="calcForm"></div>
       <div class="rv-r" id="calcOut"></div>
     </div>
+
+    <!-- ===== Reconciliation tool (public) ===== -->
+    <section id="reconcile" style="padding:clamp(54px,7vw,96px) 0 0">
+      <div class="sec-head center rv">
+        <span class="eyebrow">Free Tool · Runs in your browser</span>
+        <h2 class="title">Bank &amp; ledger <em>reconciliation.</em></h2>
+        <p class="lead">Match two sets of transactions in seconds — bank vs cashbook, ledger vs sub-ledger, intercompany, or a VAT/control account. Upload two files, we auto-match every line, you review and export. Your files never leave your device.</p>
+      </div>
+      <div class="grid g3 rv" data-stagger style="margin-bottom:32px">
+        <div class="card"><span class="kicker">Step 1</span><h3>Upload two files</h3><p>Drop in your two sources as Excel or CSV — a bank statement and your cashbook, or any two ledgers you need to tie out.</p></div>
+        <div class="card"><span class="kicker">Step 2</span><h3>We auto-match</h3><p>Columns are detected automatically and every transaction is matched by amount and date — exact matches, near-matches and suggestions, instantly.</p></div>
+        <div class="card"><span class="kicker">Step 3</span><h3>Review &amp; export</h3><p>See what is matched, what needs a look and what is outstanding — then export the full reconciliation to CSV. Nothing is ever uploaded to a server.</p></div>
+      </div>
+    <div class="calc-panel recon" id="rcPanel" style="margin-top:22px">
+      <h3>Reconciliation tool</h3>
+      <p class="calc-sub">Match two sources — bank vs cashbook, GL vs subledger, intercompany, or a VAT/control account. Everything runs in your browser; your files never leave this device.</p>
+      <div class="rc-types" id="rcTypes"></div>
+      <div class="rc-grid2" style="margin-top:16px">
+        <div>
+          <div class="rc-slabel" id="rcLblA">Source A</div>
+          <div class="rc-drop" id="rcDropA"><div class="rc-ico">📄</div><b>Choose or drop a file</b><small>.xlsx · .xls · .csv</small><input type="file" id="rcFileA" accept=".xlsx,.xls,.csv" hidden></div>
+          <div id="rcTagA"></div>
+        </div>
+        <div>
+          <div class="rc-slabel" id="rcLblB">Source B</div>
+          <div class="rc-drop" id="rcDropB"><div class="rc-ico">📄</div><b>Choose or drop a file</b><small>.xlsx · .xls · .csv</small><input type="file" id="rcFileB" accept=".xlsx,.xls,.csv" hidden></div>
+          <div id="rcTagB"></div>
+        </div>
+      </div>
+      <div id="rcMap" class="rc-hide" style="margin-top:18px">
+        <div class="rc-slabel">Map your columns</div>
+        <p class="calc-sub" style="margin:-4px 0 12px">Auto-detected — adjust if needed. Amount can be one column, or a Debit/Credit pair.</p>
+        <div class="rc-grid2">
+          <div><div class="rc-mtitle" id="rcMapTitleA">Source A</div><div id="rcMapA"></div></div>
+          <div><div class="rc-mtitle" id="rcMapTitleB">Source B</div><div id="rcMapB"></div></div>
+        </div>
+        <div class="rc-grid2" style="margin-top:6px">
+          <div class="f-group"><label>Date match window (days)</label><input type="number" id="rcWin" value="5" min="0" max="60"></div>
+          <div class="f-group"><label>Amount matching</label><select id="rcSign"><option value="abs">Absolute value (ignore +/− sign)</option><option value="signed">Exact signed value</option><option value="flipB">Flip Source B sign, then match</option></select></div>
+        </div>
+        <button class="btn btn-primary btn-sm" id="rcRun" style="margin-top:6px">Reconcile →</button>
+        <div id="rcWarn"></div>
+      </div>
+      <div id="rcResults" class="rc-hide" style="margin-top:22px">
+        <div class="rc-tiles" id="rcTiles"></div>
+        <div id="rcBanner"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn btn-ghost btn-sm" id="rcExport">⭳ Export result (CSV)</button>
+          <button class="btn btn-ghost btn-sm" id="rcReset">Start over</button>
+        </div>
+        <div class="rc-sect"><span class="rc-dot g"></span> Matched <span class="calc-sub" id="rcCM"></span></div>
+        <div class="rc-tw"><table id="rcTM"></table></div>
+        <div class="rc-sect"><span class="rc-dot a"></span> Suggested — confirm each <span class="calc-sub" id="rcCS"></span></div>
+        <div class="rc-tw"><table id="rcTS"></table></div>
+        <div class="rc-sect"><span class="rc-dot r"></span> Unmatched</div>
+        <div class="rc-grid2">
+          <div><div class="calc-sub" id="rcUAt"></div><div class="rc-tw"><table id="rcTUA"></table></div></div>
+          <div><div class="calc-sub" id="rcUBt"></div><div class="rc-tw"><table id="rcTUB"></table></div></div>
+        </div>
+      </div>
+    </div>
+    </section>
 
     <section style="padding-bottom:0">
       <div class="sec-head center rv"><span class="eyebrow">Reference</span><h2 class="title">2026/27 UK tax rates <em>at a glance.</em></h2><p class="lead">The key rates, thresholds and allowances for the 2026/27 tax year (6 April 2026 – 5 April 2027), as used by our calculators.</p></div>
@@ -1232,54 +1303,6 @@ select option:checked,select option:hover{background:#123056;color:#fff}
       </div>
     </div>
 
-    <div class="calc-panel recon" id="rcPanel" style="margin-top:22px">
-      <h3>Reconciliation tool</h3>
-      <p class="calc-sub">Match two sources — bank vs cashbook, GL vs subledger, intercompany, or a VAT/control account. Everything runs in your browser; your files never leave this device.</p>
-      <div class="rc-types" id="rcTypes"></div>
-      <div class="rc-grid2" style="margin-top:16px">
-        <div>
-          <div class="rc-slabel" id="rcLblA">Source A</div>
-          <div class="rc-drop" id="rcDropA"><div class="rc-ico">📄</div><b>Choose or drop a file</b><small>.xlsx · .xls · .csv</small><input type="file" id="rcFileA" accept=".xlsx,.xls,.csv" hidden></div>
-          <div id="rcTagA"></div>
-        </div>
-        <div>
-          <div class="rc-slabel" id="rcLblB">Source B</div>
-          <div class="rc-drop" id="rcDropB"><div class="rc-ico">📄</div><b>Choose or drop a file</b><small>.xlsx · .xls · .csv</small><input type="file" id="rcFileB" accept=".xlsx,.xls,.csv" hidden></div>
-          <div id="rcTagB"></div>
-        </div>
-      </div>
-      <div id="rcMap" class="rc-hide" style="margin-top:18px">
-        <div class="rc-slabel">Map your columns</div>
-        <p class="calc-sub" style="margin:-4px 0 12px">Auto-detected — adjust if needed. Amount can be one column, or a Debit/Credit pair.</p>
-        <div class="rc-grid2">
-          <div><div class="rc-mtitle" id="rcMapTitleA">Source A</div><div id="rcMapA"></div></div>
-          <div><div class="rc-mtitle" id="rcMapTitleB">Source B</div><div id="rcMapB"></div></div>
-        </div>
-        <div class="rc-grid2" style="margin-top:6px">
-          <div class="f-group"><label>Date match window (days)</label><input type="number" id="rcWin" value="5" min="0" max="60"></div>
-          <div class="f-group"><label>Amount matching</label><select id="rcSign"><option value="abs">Absolute value (ignore +/− sign)</option><option value="signed">Exact signed value</option><option value="flipB">Flip Source B sign, then match</option></select></div>
-        </div>
-        <button class="btn btn-primary btn-sm" id="rcRun" style="margin-top:6px">Reconcile →</button>
-        <div id="rcWarn"></div>
-      </div>
-      <div id="rcResults" class="rc-hide" style="margin-top:22px">
-        <div class="rc-tiles" id="rcTiles"></div>
-        <div id="rcBanner"></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-          <button class="btn btn-ghost btn-sm" id="rcExport">⭳ Export result (CSV)</button>
-          <button class="btn btn-ghost btn-sm" id="rcReset">Start over</button>
-        </div>
-        <div class="rc-sect"><span class="rc-dot g"></span> Matched <span class="calc-sub" id="rcCM"></span></div>
-        <div class="rc-tw"><table id="rcTM"></table></div>
-        <div class="rc-sect"><span class="rc-dot a"></span> Suggested — confirm each <span class="calc-sub" id="rcCS"></span></div>
-        <div class="rc-tw"><table id="rcTS"></table></div>
-        <div class="rc-sect"><span class="rc-dot r"></span> Unmatched</div>
-        <div class="rc-grid2">
-          <div><div class="calc-sub" id="rcUAt"></div><div class="rc-tw"><table id="rcTUA"></table></div></div>
-          <div><div class="calc-sub" id="rcUBt"></div><div class="rc-tw"><table id="rcTUB"></table></div></div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 </main>
@@ -1419,7 +1442,9 @@ function route(){
   navLinks.forEach(a=>a.classList.toggle('active',a.dataset.r===path));
   document.getElementById('mMenu').classList.remove('open');
   document.getElementById('burger').classList.remove('open');
-  window.scrollTo({top:0,behavior:'instant'});
+  var _hashEl=(location.hash&&!location.hash.startsWith('#/'))?document.getElementById(location.hash.slice(1)):null;
+  if(_hashEl){requestAnimationFrame(function(){_hashEl.scrollIntoView({behavior:'instant',block:'start'});});}
+  else{window.scrollTo({top:0,behavior:'instant'});}
   if(path==='tools'){
     const params=new URLSearchParams(query||'');
     const t=params.get('tab');
