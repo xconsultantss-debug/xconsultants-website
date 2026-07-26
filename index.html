@@ -661,6 +661,25 @@ select option:checked,select option:hover{background:#123056;color:#fff}
 .legal strong{color:var(--txt);font-weight:600}
 .legal .legal-note{margin-top:34px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--glass);font-size:13.5px}
 
+/* ===================== SIGN-UP GATE ===================== */
+.calc-freehint{font-size:12px;color:var(--muted-2);text-align:center;margin-top:14px}
+.calc-freehint a{color:var(--blue);font-weight:600}
+.gate-overlay{position:fixed;inset:0;z-index:1300;display:none;align-items:center;justify-content:center;padding:20px;
+  background:rgba(6,12,24,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.gate-overlay.show{display:flex}
+.gate-card{position:relative;width:min(440px,100%);max-height:calc(100vh - 40px);overflow:auto;
+  background:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--rad);padding:30px 28px;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+:root[data-theme="light"] .gate-card{background:#fff}
+.gate-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,3vw,28px);margin:14px 0 6px}
+.gate-card .gate-sub{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px}
+.gate-card .f-group{margin-bottom:14px}
+.gate-x{position:absolute;top:14px;right:16px;width:32px;height:32px;border-radius:50%;font-size:20px;line-height:1;color:var(--muted);background:var(--glass);border:1px solid var(--line)}
+.gate-x:hover{color:var(--txt);background:var(--glass-2)}
+.gate-alt{font-size:13px;color:var(--muted-2);text-align:center;margin-top:14px}
+.gate-alt a{color:var(--blue);font-weight:600}
+.gate-trust{font-size:11.5px;color:var(--muted-2);text-align:center;margin-top:12px}
+
 /* ===================== COOKIE CONSENT BANNER ===================== */
 .cookie-bar{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(140%);z-index:1200;width:min(680px,calc(100vw - 32px));
   background:rgba(13,26,49,.82);-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);
@@ -805,6 +824,25 @@ select option:checked,select option:hover{background:#123056;color:#fff}
     </div>
   </div>
 
+  <section style="padding-top:clamp(40px,6vw,72px)"><div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow">Precision Instruments</span>
+      <h2 class="title">Our Tax <em>Calculators.</em></h2>
+      <p class="lead">Interactive modelling instruments engineered for the modern UK enterprise — updated for the 2026/27 tax year. Choose your instrument to begin.</p>
+    </div>
+    <div class="grid g4 rv" data-stagger id="homeToolGrid"></div>
+    <div style="text-align:center;margin-top:38px" class="rv"><a href="/tools" class="btn btn-primary">Open the Full Suite</a></div>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap">
+    <div class="cta-banner rv">
+      <span class="eyebrow" style="position:relative">New · Free Tool</span>
+      <h2 class="title" style="margin-top:16px">Reconcile two files <em>in seconds.</em></h2>
+      <p class="lead">Bank vs cashbook, ledger vs sub-ledger, intercompany or VAT — upload two Excel/CSV files and our reconciliation tool auto-matches every transaction, flags the differences and exports the result. Everything runs in your browser; your data never leaves your device.</p>
+      <div style="margin-top:26px;position:relative"><a href="/tools#reconcile" class="btn btn-primary">Try the Reconciliation Tool →</a></div>
+    </div>
+  </div></section>
+
   <section><div class="wrap">
     <div class="stats rv" data-stagger>
       <div class="stat"><b>HMRC</b><span>Registered Agent</span></div>
@@ -827,25 +865,7 @@ select option:checked,select option:hover{background:#123056;color:#fff}
         <div class="kf-row"><span>Contact</span><b><a href="mailto:contact@xconsultants.co.uk" style="color:var(--blue)">contact@xconsultants.co.uk</a></b></div>
       </div>
     </div>
-
-    <div class="sec-head center rv">
-      <span class="eyebrow">Precision Instruments</span>
-      <h2 class="title">Our Tax <em>Calculators.</em></h2>
-      <p class="lead">Interactive modelling instruments engineered for the modern UK enterprise — updated for the 2026/27 tax year. Choose your instrument to begin.</p>
-    </div>
-    <div class="grid g4 rv" data-stagger id="homeToolGrid"></div>
-    <div style="text-align:center;margin-top:38px" class="rv"><a href="/tools" class="btn btn-primary">Open the Full Suite</a></div>
   </div></section>
-
-  <section style="padding-top:20px"><div class="wrap">
-    <div class="cta-banner rv">
-      <span class="eyebrow" style="position:relative">New · Free Tool</span>
-      <h2 class="title" style="margin-top:16px">Reconcile two files <em>in seconds.</em></h2>
-      <p class="lead">Bank vs cashbook, ledger vs sub-ledger, intercompany or VAT — upload two Excel/CSV files and our reconciliation tool auto-matches every transaction, flags the differences and exports the result. Everything runs in your browser; your data never leaves your device.</p>
-      <div style="margin-top:26px;position:relative"><a href="/tools#reconcile" class="btn btn-primary">Try the Reconciliation Tool →</a></div>
-    </div>
-  </div></section>
-
   <section style="padding-top:20px"><div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Enterprise</span>
@@ -1912,24 +1932,25 @@ function buildFields(){
     if(f.type==='toggle'){
       const d=document.createElement('div');d.className='toggle-row';
       d.innerHTML='<span>'+f.label+'</span><button type="button" class="switch'+(vals[f.id]?' on':'')+'" aria-label="'+f.label+'"></button>';
-      d.querySelector('.switch').addEventListener('click',function(){vals[f.id]=!vals[f.id];this.classList.toggle('on');recalc();});
+      d.querySelector('.switch').addEventListener('click',function(){vals[f.id]=!vals[f.id];this.classList.toggle('on');recalc(true);});
       w.appendChild(d);
     }else if(f.type==='select'){
       const d=document.createElement('div');d.className='f-group';
       d.innerHTML='<label>'+f.label+'</label><select>'+f.opts.map(o=>'<option value="'+o[0]+'"'+(vals[f.id]===o[0]?' selected':'')+'>'+o[1]+'</option>').join('')+'</select>';
-      d.querySelector('select').addEventListener('change',function(){vals[f.id]=this.value;buildFields();recalc();});
+      d.querySelector('select').addEventListener('change',function(){vals[f.id]=this.value;buildFields();recalc(true);});
       w.appendChild(d);
     }else{
       const d=document.createElement('div');d.className='f-group';
       const isNum=f.type==='num';
       d.innerHTML='<label>'+f.label+'</label><input '+(isNum?'type="number" inputmode="decimal" min="0" step="any"':'type="text"')+' value="'+vals[f.id]+'">';
-      d.querySelector('input').addEventListener('input',function(){vals[f.id]=isNum?parseFloat(this.value)||0:this.value;recalc();});
+      d.querySelector('input').addEventListener('input',function(){vals[f.id]=isNum?parseFloat(this.value)||0:this.value;recalc(true);});
       w.appendChild(d);
     }
   });
 }
-function recalc(){
+function recalc(u){
   const t=TOOLS[currentTool],r=t.calc(vals);
+  if(u&&window.__xcGateCheck&&window.__xcGateCheck(t,r))return;
   const barTotal=r.bars.reduce((s,b)=>s+Math.max(0,b.v),0)||1;
   outEl.innerHTML=
    '<div class="result-hero"><span>'+r.hero.label+'</span><b>'+r.hero.value+'</b></div>'+
@@ -1937,7 +1958,9 @@ function recalc(){
    '<div class="bar-viz">'+r.bars.map(b=>'<i style="width:'+(Math.max(0,b.v)/barTotal*100)+'%;background:'+b.c+'"></i>').join('')+'</div>'+
    '<div class="legend">'+r.bars.filter(b=>b.v>0).map(b=>'<span><i style="background:'+b.c+'"></i>'+b.l+' · '+fmt0(b.v)+'</span>').join('')+'</div>'+
    '<div class="breakdown">'+r.rows.map(x=>'<div class="row'+(x.total?' total':'')+'"><span>'+x.n+'</span><b>'+(x.v<0?'− ':'')+fmt(Math.abs(x.v))+'</b></div>').join('')+'</div>'+
-   '<p class="disclaimer">'+r.note+' This is an estimate based on standard 2026/27 UK rates and does not constitute tax advice. <a href="/contact" style="color:var(--blue)">Speak to us →</a></p>';
+   '<p class="disclaimer">'+r.note+' This is an estimate based on standard 2026/27 UK rates and does not constitute tax advice. <a href="/contact" style="color:var(--blue)">Speak to us →</a></p>'+
+   (window.__xcFreeHint?window.__xcFreeHint():'');
+  if(u&&window.__xcGateCount)window.__xcGateCount(t,r);
 }
 
 /* ================= SUPABASE AUTH + PORTAL ================= */
@@ -2145,7 +2168,7 @@ async function loadDocs(){
     el('rcTUA').innerHTML=R.unA.length?uh+R.unA.map(x=>'<tr>'+rowCells(x)+'</tr>').join(''):'<tr><td class="rc-empty">✓ all matched</td></tr>';
     el('rcTUB').innerHTML=R.unB.length?uh+R.unB.map(x=>'<tr>'+rowCells(x)+'</tr>').join(''):'<tr><td class="rc-empty">✓ all matched</td></tr>';
   }
-  el('rcRun').onclick=()=>{const okA=S.map.A.amount||S.map.A.debit||S.map.A.credit,okB=S.map.B.amount||S.map.B.debit||S.map.B.credit;if(!okA||!okB){el('rcWarn').innerHTML='<div class="rc-warn">Please map an Amount column (or a Debit/Credit pair) for both sources.</div>';return;}el('rcWarn').innerHTML='';reconcile();};
+  el('rcRun').onclick=()=>{const okA=S.map.A.amount||S.map.A.debit||S.map.A.credit,okB=S.map.B.amount||S.map.B.debit||S.map.B.credit;if(!okA||!okB){el('rcWarn').innerHTML='<div class="rc-warn">Please map an Amount column (or a Debit/Credit pair) for both sources.</div>';return;}el('rcWarn').innerHTML='';if(window.__xcReconGate){window.__xcReconGate(reconcile);}else{reconcile();}};
   el('rcReset').onclick=()=>{clr('A');clr('B');el('rcResults').classList.add('rc-hide');};
   el('rcExport').onclick=()=>{const R=S.result;if(!R)return;const rows=[['status',cur.a+' date',cur.a+' desc',cur.a+' amount',cur.b+' date',cur.b+' desc',cur.b+' amount']];R.matched.forEach(p=>rows.push([p.type==='exact'?'matched-exact':'matched',dISO(p.a.date),p.a.desc,p.a.amt,dISO(p.b.date),p.b.desc,p.b.amt]));R.suggested.forEach(p=>rows.push(['suggested',dISO(p.a.date),p.a.desc,p.a.amt,dISO(p.b.date),p.b.desc,p.b.amt]));R.unA.forEach(x=>rows.push(['unmatched-'+cur.a,dISO(x.date),x.desc,x.amt,'','','']));R.unB.forEach(x=>rows.push(['unmatched-'+cur.b,'','','',dISO(x.date),x.desc,x.amt]));const csv=rows.map(r=>r.map(c=>'"'+String(c==null?'':c).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='reconciliation.csv';a.click();};
 })();
@@ -2185,10 +2208,111 @@ function initCookieBanner(){
 }
 if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initCookieBanner);}else{initCookieBanner();}
 
+/* ===== Free-usage sign-up gate (calculators: 3 free · reconciliation: signup to run) ===== */
+(function(){
+  var FREE=3, lastKey='', tmr=null, pending=null, mode='signup';
+  function unlocked(){try{return !!sbSession||localStorage.getItem('xc-unlocked')==='1';}catch(e){return false;}}
+  function used(){try{return parseInt(localStorage.getItem('xc-calc-used')||'0',10)||0;}catch(e){return 0;}}
+  function setUsed(n){try{localStorage.setItem('xc-calc-used',n);}catch(e){}}
+  function remaining(){return Math.max(0,FREE-used());}
+  var el=function(id){return document.getElementById(id);};
+
+  window.__xcGateCheck=function(t,r){
+    if(unlocked())return false;
+    var key=t.title+'|'+r.hero.value;
+    if(used()>=FREE&&key!==lastKey){openGate('calc');return true;}
+    return false;
+  };
+  window.__xcGateCount=function(t,r){
+    if(unlocked())return;
+    var key=t.title+'|'+r.hero.value;
+    clearTimeout(tmr);
+    tmr=setTimeout(function(){
+      if(unlocked())return;
+      if(key!==lastKey){lastKey=key;setUsed(used()+1);var h=el('calcFreeHint');if(h)h.outerHTML=window.__xcFreeHint();}
+    },700);
+  };
+  window.__xcFreeHint=function(){
+    if(unlocked())return '';
+    var n=remaining();
+    if(n>0)return '<p class="calc-freehint" id="calcFreeHint">'+n+' free calculation'+(n===1?'':'s')+' left · <a href="#" onclick="window.__xcOpenGate(\'calc\');return false">Sign up free</a> for unlimited</p>';
+    return '<p class="calc-freehint" id="calcFreeHint"><a href="#" onclick="window.__xcOpenGate(\'calc\');return false">Sign up free</a> to keep calculating</p>';
+  };
+  window.__xcReconGate=function(runFn){ if(unlocked()){runFn();return;} pending=runFn; openGate('recon'); };
+
+  function setMode(m){
+    mode=m;
+    el('gateNameGroup').style.display=m==='signup'?'':'none';
+    el('gateBtn').textContent=m==='signup'?'Create free account':'Log in';
+    el('gateAltText').innerHTML=m==='signup'?'Already have an account? <a href="#" id="gateSwitch">Log in</a>':'New here? <a href="#" id="gateSwitch">Create a free account</a>';
+    var sw=el('gateSwitch'); if(sw)sw.onclick=function(e){e.preventDefault();setMode(m==='signup'?'signin':'signup');};
+    el('gateMsg').className='auth-msg';
+  }
+  function openGate(kind){
+    var ov=el('gateOverlay'); if(!ov)return;
+    if(kind==='recon'){el('gateEyebrow').textContent='Free account';el('gateTitle').textContent='Sign up free to reconcile';el('gateSub').textContent='Your files are ready. Create a free account with your email to run the reconciliation — your files never leave your device.';}
+    else{el('gateEyebrow').textContent='Free account';el('gateTitle').textContent="Keep calculating — it's free";el('gateSub').textContent="You've used your 3 free calculations. Create a free account with your email for unlimited use.";}
+    setMode('signup'); ov.classList.add('show');
+    var em=el('gateEmail'); if(em)setTimeout(function(){em.focus();},60);
+  }
+  window.__xcOpenGate=openGate;
+  function closeGate(){var ov=el('gateOverlay');if(ov)ov.classList.remove('show');}
+  function gmsg(t,ok){var m=el('gateMsg');if(m){m.className='auth-msg '+(ok?'ok':'err');m.textContent=t;}}
+  async function onGateSubmit(e){
+    e.preventDefault();
+    if(typeof sb==='undefined'||!sb){gmsg('Sign-up is unavailable right now — please email contact@xconsultants.co.uk');return;}
+    var email=el('gateEmail').value.trim(), pass=el('gatePass').value, name=el('gateName').value.trim();
+    var btn=el('gateBtn'); btn.disabled=true; btn.style.opacity=.6;
+    try{
+      if(mode==='signup'){
+        var res=await sb.auth.signUp({email:email,password:pass,options:{data:{full_name:name}}});
+        if(res.error)throw res.error;
+        try{var s=await sb.auth.getSession(); if(s.data.session){await sb.from('profiles').upsert({id:s.data.session.user.id,full_name:name});}}catch(_){}
+      }else{
+        var r2=await sb.auth.signInWithPassword({email:email,password:pass});
+        if(r2.error)throw r2.error;
+      }
+      try{localStorage.setItem('xc-unlocked','1');}catch(_){}
+      gmsg("You're in — unlocking…",true);
+      setTimeout(function(){
+        closeGate();
+        if(pending){var p=pending;pending=null;try{p();}catch(_){}}
+        else{try{if(typeof recalc==='function')recalc(false);}catch(_){}}
+      },600);
+    }catch(err){gmsg((err&&err.message)||'Something went wrong — please try again.');}
+    btn.disabled=false; btn.style.opacity=1;
+  }
+  function initGateDom(){
+    var ov=el('gateOverlay'); if(!ov)return;
+    var gc=el('gateClose'); if(gc)gc.addEventListener('click',closeGate);
+    ov.addEventListener('click',function(e){if(e.target===ov)closeGate();});
+    var gf=el('gateForm'); if(gf)gf.addEventListener('submit',onGateSubmit);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initGateDom);else initGateDom();
+})();
+
 /* boot */
 route();
 addEventListener('load',observeAll);
 </script>
+<div class="gate-overlay" id="gateOverlay" role="dialog" aria-label="Sign up">
+  <div class="gate-card">
+    <button class="gate-x" id="gateClose" aria-label="Close" type="button">×</button>
+    <span class="eyebrow" id="gateEyebrow">Free account</span>
+    <h3 id="gateTitle">Keep going — it's free</h3>
+    <p class="gate-sub" id="gateSub">Create a free account with your email to continue.</p>
+    <form id="gateForm">
+      <div class="f-group" id="gateNameGroup"><label>Full name</label><input id="gateName" placeholder="Jane Smith"></div>
+      <div class="f-group"><label>Email</label><input id="gateEmail" type="email" required placeholder="you@company.co.uk"></div>
+      <div class="f-group"><label>Password</label><input id="gatePass" type="password" required minlength="6" placeholder="Create a password"></div>
+      <button class="btn btn-primary" type="submit" id="gateBtn" style="width:100%;justify-content:center">Create free account</button>
+      <div class="auth-msg" id="gateMsg"></div>
+      <p class="gate-alt" id="gateAltText">Already have an account? <a href="#" id="gateSwitch">Log in</a></p>
+      <p class="gate-trust">Free · no card required · unsubscribe any time</p>
+    </form>
+  </div>
+</div>
+
 <div class="cookie-bar" id="cookieBar" role="dialog" aria-label="Cookie consent">
   <p><b>We use cookies.</b> We'd like to use Google Analytics to understand how visitors use our site — this helps us improve it. Nothing is used to identify you personally. See our <a href="/privacy">privacy notice</a>.</p>
   <div class="cb-btns">
