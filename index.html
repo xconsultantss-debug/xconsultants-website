@@ -223,6 +223,23 @@ section{padding:clamp(70px,9vw,130px) 0;position:relative}
 .tool-tab.active b{color:var(--blue)}
 .calc-shell{display:grid;grid-template-columns:1.02fr .98fr;gap:24px;align-items:start}
 .calc-panel{background:var(--glass);border:1px solid var(--line);border-radius:var(--rad);padding:clamp(24px,3vw,40px)}
+/* ===== /tools first-paint hook: keep the live calculator above the fold & visible instantly ===== */
+.tools-hero{padding:calc(var(--nav-h) + clamp(16px,3.2vw,32px)) 0 clamp(12px,1.8vw,20px)!important}
+.tools-hero .lead{margin-top:12px;max-width:600px}
+[data-page="tools"] .tool-rail{margin-bottom:22px}
+.calc-in{animation:calcIn .5s var(--ease) both}
+@keyframes calcIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.result-hero.hero-pop{animation:heroPop .6s var(--ease) both}
+@keyframes heroPop{0%{opacity:0;transform:scale(.95)}100%{opacity:1;transform:none}}
+.result-hero .live-badge{position:absolute;top:12px;right:14px;font-size:9px;letter-spacing:.16em;color:#33c46e;display:inline-flex;align-items:center;gap:5px;text-transform:uppercase;font-weight:700}
+.result-hero .live-badge i{width:6px;height:6px;border-radius:50%;background:#33c46e;animation:pulseDot 1.8s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(51,196,110,.5)}70%{box-shadow:0 0 0 7px rgba(51,196,110,0)}100%{box-shadow:0 0 0 0 rgba(51,196,110,0)}}
+@media(max-width:820px){
+  .calc-shell #calcOut{order:-1;margin-bottom:18px}
+  #toolRail .tool-tab{padding:12px 10px;display:flex;align-items:center;justify-content:center;gap:9px}
+  #toolRail .tool-tab .ico{margin:0;width:18px;height:18px;flex:none}
+  #toolRail .tool-tab b{margin-top:0;font-size:10px;letter-spacing:.1em}
+}
 .calc-panel h3{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);font-weight:500;margin-bottom:6px}
 .calc-sub{color:var(--muted-2);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:26px}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -1048,16 +1065,16 @@ select option:checked,select option:hover{background:#123056;color:#fff}
 
 <!-- ================= TOOLS ================= -->
 <section class="page" data-page="tools">
-  <div class="page-hero wrap">
+  <div class="page-hero wrap tools-hero">
     <span class="eyebrow">Precision Instruments · 2026/27</span>
-    <h1 class="display" style="font-size:clamp(42px,7vw,92px)">The Tax <em>Toolkit.</em></h1>
-    <p class="lead">Eight interactive modelling instruments, updated for the 2026/27 UK tax year — plus a free <a href="/tools#reconcile" style="color:var(--blue)">bank &amp; ledger reconciliation tool</a>. Everything runs instantly in your browser.</p>
+    <h1 class="display" style="font-size:clamp(30px,5vw,52px)">The Tax <em>Toolkit.</em></h1>
+    <p class="lead">Free, instant UK tax calculators for 2026/27 — no signup to start. Your live estimate is right below; change any figure and it updates as you type.</p>
   </div>
   <div class="wrap">
     <div class="tool-rail rv" id="toolRail"></div>
     <div class="calc-shell">
-      <div class="calc-panel rv-l" id="calcForm"></div>
-      <div class="rv-r" id="calcOut"></div>
+      <div class="calc-panel calc-in" id="calcForm"></div>
+      <div class="calc-in" id="calcOut"></div>
     </div>
 
     <!-- ===== Reconciliation tool (public) ===== -->
@@ -1922,6 +1939,7 @@ function selectTool(k){
   let html='<h3>'+t.title+'</h3><p class="calc-sub">'+t.sub+'</p><div id="fwrap"></div>';
   formEl.innerHTML=html;
   buildFields();
+  window.__calcFirst=true;
   recalc();
 }
 function buildFields(){
@@ -1953,13 +1971,14 @@ function recalc(u){
   if(u&&window.__xcGateCheck&&window.__xcGateCheck(t,r))return;
   const barTotal=r.bars.reduce((s,b)=>s+Math.max(0,b.v),0)||1;
   outEl.innerHTML=
-   '<div class="result-hero"><span>'+r.hero.label+'</span><b>'+r.hero.value+'</b></div>'+
+   '<div class="result-hero'+(window.__calcFirst?' hero-pop':'')+'"><span class="live-badge"><i></i>Live</span><span>'+r.hero.label+'</span><b>'+r.hero.value+'</b></div>'+
    '<div class="result-grid">'+r.minis.map(m=>'<div class="result-mini"><span>'+m.l+'</span><b>'+m.v+'</b></div>').join('')+'</div>'+
    '<div class="bar-viz">'+r.bars.map(b=>'<i style="width:'+(Math.max(0,b.v)/barTotal*100)+'%;background:'+b.c+'"></i>').join('')+'</div>'+
    '<div class="legend">'+r.bars.filter(b=>b.v>0).map(b=>'<span><i style="background:'+b.c+'"></i>'+b.l+' · '+fmt0(b.v)+'</span>').join('')+'</div>'+
    '<div class="breakdown">'+r.rows.map(x=>'<div class="row'+(x.total?' total':'')+'"><span>'+x.n+'</span><b>'+(x.v<0?'− ':'')+fmt(Math.abs(x.v))+'</b></div>').join('')+'</div>'+
    '<p class="disclaimer">'+r.note+' This is an estimate based on standard 2026/27 UK rates and does not constitute tax advice. <a href="/contact" style="color:var(--blue)">Speak to us →</a></p>'+
    (window.__xcFreeHint?window.__xcFreeHint():'');
+  window.__calcFirst=false;
   if(u&&window.__xcGateCount)window.__xcGateCount(t,r);
 }
 
